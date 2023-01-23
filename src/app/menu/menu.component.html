@@ -1,0 +1,20 @@
+<div class="mt-4 px-5">
+    <ul class="nav nav-pills" style="border-bottom:3px solid black;cursor:pointer">
+            <li class="nav-item">
+                <a class="nav-link tabButton rounded-0 mx-1" routerLink="/partsCreation" routerLinkActive="active" (click)="tabClick('partsCreation')"><b>Part Creation</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link tabButton rounded-0" routerLink="/partsSummary" routerLinkActive="active" (click)="tabClick('partsSummary')"><b>Parts Summary</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link tabButton rounded-0 mx-1" routerLink="/colourCoding" routerLinkActive="active" (click)="tabClick('colourCoding')"><b>Colour Coding</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link tabButton rounded-0" routerLink="/masterData" routerLinkActive="active" (click)="tabClick('masterData')"><b>Material Masters Data</b></a>
+              </li>
+      </ul>  
+</div>
+<div class=" mt-4 px-5">
+    <router-outlet></router-outlet>
+</div>
+  

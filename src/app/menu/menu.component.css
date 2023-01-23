@@ -1,0 +1,8 @@
+.tabButton{
+    background-color: #dbd8d8;
+    color:black
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: red !important;
+    background-color: black !important;
+}
