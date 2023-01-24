@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+.sup{
+    top: 0px;
+    left: 0px;
+    /* bottom: 45px; */
+    font-size: 22px;
+    color: red;
+}
+.blackBtn{
+    color: red !important;
+    background: black !important;
+    border-radius: 3px ! important;
+}
+.borderRadius{
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 30vw;
+}
+.veticalLine{
+    border-left: 2px solid grey;
+    height: 36px;
+}
