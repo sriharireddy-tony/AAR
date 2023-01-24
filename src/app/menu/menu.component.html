@@ -1,20 +1,46 @@
-<div class="mt-4 px-5">
-    <ul class="nav nav-pills" style="border-bottom:3px solid black;cursor:pointer">
-            <li class="nav-item">
-                <a class="nav-link tabButton rounded-0 mx-1" routerLink="/partsCreation" routerLinkActive="active" (click)="tabClick('partsCreation')"><b>Part Creation</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link tabButton rounded-0" routerLink="/partsSummary" routerLinkActive="active" (click)="tabClick('partsSummary')"><b>Parts Summary</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link tabButton rounded-0 mx-1" routerLink="/colourCoding" routerLinkActive="active" (click)="tabClick('colourCoding')"><b>Colour Coding</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link tabButton rounded-0" routerLink="/masterData" routerLinkActive="active" (click)="tabClick('masterData')"><b>Material Masters Data</b></a>
-              </li>
-      </ul>  
+<div class="mt-4 px-5 mx-5" style="border-bottom:3px solid black; display: flex; justify-content: space-between;">
+    <ul class="nav nav-pills" style="cursor:pointer;margin-left: -24px;">
+        <li class="nav-item">
+            <a class="nav-link tabButton rounded-0 mx-1" routerLink="/partsCreation" routerLinkActive="active"
+                (click)="tabClick('partsCreation')"><b>Part Creation</b></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link tabButton rounded-0" routerLink="/partsSummary" routerLinkActive="active"
+                (click)="tabClick('partsSummary')"><b>Parts Summary</b></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link tabButton rounded-0 mx-1" routerLink="/colourCoding" routerLinkActive="active"
+                (click)="tabClick('colourCoding')"><b>Color Coding</b></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link tabButton rounded-0" routerLink="/masterData" routerLinkActive="active"
+                (click)="tabClick('masterData')"><b>Material Masters Data</b></a>
+        </li>
+    </ul>
+    <ul class="nav nav-pills" style="cursor:pointer;">
+        <li class="nav-item" *ngIf="tName =='partsCreation'">
+            <a class="nav-link btnRed rounded-0" style="font-size:12px"><i class="fa fa-refresh"
+                    aria-hidden="true"></i><b>&nbsp;&nbsp;&nbsp;Refresh</b></a>
+        </li>
+        <li *ngIf="tName =='partsCreation'">
+            <a class="nav-link btnRed rounded-0 mx-2" style="font-size:12px"><i class="fa fa-download"
+                    aria-hidden="true"></i><b>&nbsp;&nbsp;&nbsp;Download PDF</b></a>
+        </li>
+        <li *ngIf="tName =='partsCreation'">
+            <i style="color: red;" class="fa fa-download"aria-hidden="true"></i>
+            &nbsp;<a class="rounded-0" style="font-size:12px;color: red;"><b>WorkflowHistory</b></a>
+        </li>
+        <li class="nav-item" *ngIf="tName =='partsSummary'">
+            <a class="nav-link btnRed rounded-0" style="font-size:12px"><i class="fa-solid fa-file-export"></i><b>&nbsp;&nbsp;&nbsp;Export To Excel</b></a>
+        </li>
+        <li class="nav-item" *ngIf="tName =='colourCoding'">
+            <a class="nav-link btnRed rounded-0" style="font-size:12px"><i class="fa-solid fa-file-shield"></i><b>&nbsp;&nbsp;&nbsp;Save</b></a>
+        </li>
+        <li class="nav-item" *ngIf="tName =='masterData'">
+            <a class="nav-link btnRed rounded-0" style="font-size:12px"><i class="fa-solid fa-file-shield"></i><b>&nbsp;&nbsp;&nbsp;Save</b></a>
+        </li>
+    </ul>
 </div>
 <div class=" mt-4 px-5">
     <router-outlet></router-outlet>
 </div>
-  

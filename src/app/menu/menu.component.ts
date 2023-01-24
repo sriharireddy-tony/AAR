@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   constructor() { }
+  tName:string = 'partsCreation';
 
   ngOnInit(): void {
+    let routerName = window.location.href.split('/')[window.location.href.split('/').length - 1];
+    this.tName = routerName;
   }
   tabClick(tName:string){
-
+this.tName = tName;
   }
 }

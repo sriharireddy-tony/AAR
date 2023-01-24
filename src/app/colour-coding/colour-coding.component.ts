@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any
 
 @Component({
   selector: 'app-colour-coding',
@@ -11,5 +12,7 @@ export class ColourCodingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  uploadImage() {
+    $("#imageUpload").click();
+  }
 }

@@ -1,1 +1,308 @@
-<p>master-data works!</p>
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <div class="row">
+            <h5 class="float-start" style="color:red">Master Data</h5>
+        </div>
+    </div>
+    <div class="col-lg-12 mt-3" style="background-color:rgb(197, 197, 197);color:black">
+        <ul class="nav nav-fill py-2" style="cursor:pointer">
+            <li class="nav-item" [ngClass]="{'tabRed':tName == 'PMaster'}" (click)="tabClick('PMaster')">
+                <a class=""><b>Project Master</b></a>
+            </li>
+            <li class="nav-item" [ngClass]="{'tabRed':tName == 'SCreator'}" (click)="tabClick('SCreator')">
+                <a class=""><b>System Creator</b></a>
+            </li>
+            <li class="nav-item" [ngClass]="{'tabRed':tName == 'Paint'}" (click)="tabClick('Paint')">
+                <a class=""><b>Paint</b></a>
+            </li>
+            <li class="nav-item" [ngClass]="{'tabRed':tName == 'PMIC'}" (click)="tabClick('PMIC')">
+                <a class=""><b>Plastic MIC</b></a>
+            </li>
+            <li class="nav-item" [ngClass]="{'tabRed':tName == 'STrim'}" (click)="tabClick('STrim')">
+                <a class=""><b>Soft Trim</b></a>
+            </li>
+            <li class="nav-item" [ngClass]="{'tabRed':tName == 'Grain'}" (click)="tabClick('Grain')">
+                <a class=""><b>Grain</b></a>
+            </li>
+            <li class="nav-item" [ngClass]="{'tabRed':tName == 'DFinish'}" (click)="tabClick('DFinish')">
+                <a class=""><b>Decorative Finish</b></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="col-lg-12 mt-4" *ngIf="tName == 'Paint'">
+    <div style="background-color:rgb(197, 196, 196);">
+        <div class="py-2"><b>Paint</b></div>
+    </div>
+    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
+        <table class="table table-bordered">
+            <thead style="background-color:rgb(240, 240, 240)">
+                <tr>
+                    <th rowspan="3">S.No</th>
+                    <th rowspan="3">Color Name</th>
+                    <th rowspan="3">Color Code</th>
+                    <th rowspan="3">Paint System</th>
+                    <th rowspan="3">Paint Finish Type</th>
+                    <th rowspan="3">Date Master Relization</th>
+                    <th rowspan="3">Applicable Part</th>
+                    <th rowspan="3">Application in Plant</th>
+                    <th rowspan="3">Workability Confirmation Date</th>
+                    <th rowspan="3">COE Testing Passed Date</th>
+                    <th rowspan="3">Supplier</th>
+                    <th colspan="3">Instrument Name BYK</th>
+                    <th rowspan="3">Glose @20Deg</th>
+                    <th rowspan="3">Designer</th>
+                    <th rowspan="3">Created by</th>
+                    <th rowspan="3">Project</th>
+                    <th rowspan="3">Upload Plaque Image</th>
+                </tr>
+                <tr>
+                    <th colspan="3">Color Values</th>
+                </tr>
+                <tr>
+                    <th>L</th>
+                    <th>A</th>
+                    <th>B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-lg-12 mt-4" *ngIf="tName == 'PMIC'">
+    <div style="background-color:rgb(197, 196, 196);">
+        <div class="py-2"><b>Plastic MIC</b></div>
+    </div>
+    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
+        <table class="table table-bordered">
+            <thead style="background-color:rgb(240, 240, 240)">
+                <tr>
+                    <th rowspan="3">S.No</th>
+                    <th rowspan="3">Color Name</th>
+                    <th rowspan="3">Color Code</th>
+                    <th rowspan="3">Material Grade</th>
+                    <th rowspan="3">MIC Finish Type</th>
+                    <th rowspan="3">Date Master Relization</th>
+                    <th rowspan="3">Applicable Part</th>
+                    <th rowspan="3">Application in Plant</th>
+                    <th rowspan="3">Supplier</th>
+                    <th colspan="3">Instrument Name BYK</th>
+                    <th rowspan="3">Glose @20Deg</th>
+                    <th rowspan="3">Designer</th>
+                    <th rowspan="3">Created by</th>
+                    <th rowspan="3">Project</th>
+                    <th rowspan="3">Upload Plaque Image</th>
+                </tr>
+                <tr>
+                    <th colspan="3">Color Values</th>
+                </tr>
+                <tr>
+                    <th>L</th>
+                    <th>A</th>
+                    <th>B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>Mark</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-lg-12 mt-4" *ngIf="tName == 'STrim'">
+    <div style="background-color:rgb(197, 196, 196);">
+        <div class="py-2"><b>Soft Trim</b></div>
+    </div>
+    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
+        <table class="table table-bordered">
+            <thead style="background-color:rgb(240, 240, 240)">
+                <tr>
+                    <th rowspan="3">S.No</th>
+                    <th rowspan="3">Color Name</th>
+                    <th rowspan="3">Color Code</th>
+                    <th rowspan="3">Material Specification</th>
+                    <th rowspan="3">Material Construction</th>
+                    <th rowspan="3">Surface Treatment</th>
+                    <th rowspan="3">Lamination Thickness</th>
+                    <th rowspan="3">Application Area</th>
+                    <th rowspan="3">Stretch/Weft Warp</th>
+                    <th colspan="3">Date Of Master Relization</th>
+                    <th rowspan="3">Supplier</th>
+                    <th rowspan="3">Designer</th>
+                    <th rowspan="3">Cost of material</th>
+                    <th rowspan="3">Created by</th>
+                    <th rowspan="3">Project</th>
+                    <th rowspan="3">Upload Plaque Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>Mark</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-lg-12 mt-4" *ngIf="tName == 'Grain'">
+    <div style="background-color:rgb(197, 196, 196);">
+        <div class="py-2"><b>Grain</b></div>
+    </div>
+    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
+        <table class="table table-bordered">
+            <thead style="background-color:rgb(240, 240, 240)">
+                <tr>
+                    <th rowspan="3">S.No</th>
+                    <th rowspan="3">Grain Name</th>
+                    <th rowspan="3">Grain Code</th>
+                    <th rowspan="3">Supplier</th>
+                    <th rowspan="3">Etching Methodology</th>
+                    <th rowspan="3">Application Location</th>
+                    <th rowspan="3">Scratch & Dust Resistance Test</th>
+                    <th rowspan="3">Grain Master Location</th>
+                    <th rowspan="3">Grain Insert Available</th>
+                    <th colspan="2">Grain Dept</th>
+                    <th rowspan="3">Glose @20Deg</th>
+                    <th rowspan="3">Date of Master Relization</th>
+                    <th rowspan="3">Designer</th>
+                    <th rowspan="3">Created by</th>
+                    <th rowspan="3">Project</th>
+                    <th rowspan="3">Upload Plaque Image</th>
+                </tr>
+                <tr>
+                    <th>Dept</th>
+                    <th>Draft</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>Mark</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-lg-12 mt-4" *ngIf="tName == 'DFinish'">
+    <div style="background-color:rgb(197, 196, 196);">
+        <div class="py-2"><b>Decorative Finish</b></div>
+    </div>
+    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
+        <table class="table table-bordered">
+            <thead style="background-color:rgb(240, 240, 240)">
+                <tr>
+                    <th rowspan="3">S.No</th>
+                    <th rowspan="3">Finish Name</th>
+                    <th rowspan="3">Finish Code</th>
+                    <th rowspan="3">Tier2 Supplier</th>
+                    <th rowspan="3">Tier1 Supplier</th>
+                    <th rowspan="3">Application Location</th>
+                    <th rowspan="3">Scratch & Dust Resistance Test</th>
+                    <th rowspan="3">Process Location</th>
+                    <th rowspan="3">Date Of Master Relization</th>
+                    <th rowspan="3">Glose @20Deg</th>
+                    <th rowspan="3">Designer</th>
+                    <th rowspan="3">Created by</th>
+                    <th rowspan="3">Project</th>
+                    <th rowspan="3">Upload Plaque Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>Mark</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

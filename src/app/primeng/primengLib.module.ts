@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CheckboxModule} from 'primeng/checkbox';
-// import {DropdownModule} from 'primeng/dropdown';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    // CheckboxModule
+    CheckboxModule,
+    ButtonModule
   ],
   exports: [
-    // CheckboxModule
+    CheckboxModule,
+    ButtonModule
   ]
 })
 export class PrimengLibModule { }

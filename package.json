@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf-prod.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -20,8 +20,10 @@
     "@angular/router": "~13.1.0",
     "@fortawesome/fontawesome-free": "^6.2.1",
     "bootstrap": "^5.2.3",
-    "primeng": "^8.1.1",
+    "ngx-ui-loader": "^13.0.0",
+    "primeng": "^13.4.1",
     "rxjs": "~7.4.0",
+    "sweetalert2": "^11.7.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

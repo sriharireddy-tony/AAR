@@ -1,1 +1,262 @@
-<p>colour-coding works!</p>
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <div class="row">
+            <h5 class="float-start" style="color:red">Color Coding</h5>
+        </div>
+    </div>
+<div class="mt-4 col-lg-12">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="row borderRadius">
+                <div class="col-lg-6">
+                    <span>Major Color</span>
+                </div>
+                <div class="col-lg-6 veticalLine">
+                    <select class="form-select">
+                        <option value="">--Select--</option>
+                        <option>gdffghh</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row borderRadius">
+                <div class="col-lg-6">
+                    <span>Application Location</span>
+                </div>
+                <div class="col-lg-6 veticalLine">
+                    <select class="form-select">
+                        <option value="">--Select--</option>
+                        <option>gdffghh</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row borderRadius">
+                <div class="col-lg-6">
+                    <span>Paint Type</span>
+                </div>
+                <div class="col-lg-6 veticalLine">
+                    <select class="form-select selectpicker">
+                        <option value="">--Select--</option>
+                        <option>gdffghh</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-4 col-lg-12">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="row borderRadius">
+                <div class="col-lg-6">
+                    <span>Finish Type</span>
+                </div>
+                <div class="col-lg-6 veticalLine">
+                    <select class="form-select">
+                        <option value="">--Select--</option>
+                        <option>gdffghh</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row borderRadius">
+                <div class="col-lg-6">
+                    <span>Decorative Application</span>
+                </div>
+                <div class="col-lg-6 veticalLine">
+                    <select class="form-select">
+                        <option value="">--Select--</option>
+                        <option>gdffghh</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row borderRadius">
+                <div class="col-lg-6">
+                    <span>Number</span>
+                </div>
+                <div class="col-lg-6 veticalLine">
+                    <input type="text" class="form-control inputBorderHide">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 mt-3" style="text-align:center">
+    <button class="btn blackBtn mx-3"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;Save</button>
+    <button class="btn btn-outline-dark"><i class="fa-regular fa-circle-xmark"></i>&nbsp;&nbsp;&nbsp;Clear</button>
+</div>
+<div class="col-lg-12 mt-4">
+    <div style="background-color:rgb(197, 196, 196);">
+        <div class=""><b>Color Master</b></div>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr style="background-color:rgb(240, 240, 240)">
+                    <th>Major Color</th>
+                    <th>Application Location</th>
+                    <th>Paint Type</th>
+                    <th>Finish Type</th>
+                    <th>Decorative Application</th>
+                    <th>Number</th>
+                  </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                  </tr>
+                  <tr>
+                    <td>Adam</td>
+                    <td>Johnson</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                  </tr>
+            </tbody>
+        </table>
+      </div>
+</div>
+<div class="col-lg-12 mt-4">
+    <div class="row">
+        <h5 class="float-start" style="color:red">Grain Coding</h5>
+    </div>
+</div>
+<div class="mt-4 col-lg-12">
+<div class="row">
+    <div class="col-lg-4">
+        <div class="row borderRadius">
+            <div class="col-lg-6">
+                <span>Major Grain Types</span>
+            </div>
+            <div class="col-lg-6 veticalLine">
+                <select class="form-select">
+                    <option value="">--Select--</option>
+                    <option>gdffghh</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="row borderRadius">
+            <div class="col-lg-6">
+                <span>Image</span>
+            </div>
+            <div class="col-lg-6 veticalLine">
+                <button class="btn" style="background-color:rgb(182, 182, 182);color: white;height:19px;width:150px;" (click)="uploadImage()"></button>
+                <form style="display:none">
+                    <!-- <input type="file" id="fileUploadDoc" (change)="UploadFileDoc($event)"
+                        [(ngModel)]="fileUploadDoc" name="fileUploadDoc" style="display:none"
+                        [ngModelOptions]="{standalone: true}" value="fileUploadDoc"> -->
+                        <input type="file" id="imageUpload">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="row borderRadius">
+            <div class="col-lg-6">
+                <span>Methodology</span>
+            </div>
+            <div class="col-lg-6 veticalLine">
+                <select class="form-select selectpicker">
+                    <option value="">--Select--</option>
+                    <option>gdffghh</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="mt-4 col-lg-12">
+<div class="row">
+    <div class="col-lg-4">
+        <div class="row borderRadius">
+            <div class="col-lg-6">
+                <span>Supplier</span>
+            </div>
+            <div class="col-lg-6 veticalLine">
+                <select class="form-select">
+                    <option value="">--Select--</option>
+                    <option>gdffghh</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="row borderRadius">
+            <div class="col-lg-6">
+                <span>Number</span>
+            </div>
+            <div class="col-lg-6 veticalLine">
+                <input type="text" class="form-control inputBorderHide">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <button class="btn blackBtn"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;Save</button>
+         <button class="btn btn-outline-dark mx-3"><i class="fa-regular fa-circle-xmark"></i>&nbsp;&nbsp;&nbsp;Clear</button>
+    </div>
+</div>
+</div>
+<div class="col-lg-12 mt-4">
+    <div style="background-color:rgb(197, 196, 196);">
+        <div class=""><b>Grade Master</b></div>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr style="background-color:rgb(240, 240, 240)">
+                    <th>Major Grain Types / Organic Leather</th>
+                    <th>Methodology</th>
+                    <th>Supplier</th>
+                    <th>Number</th>
+                    <th>Code</th>
+                  </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                  </tr>
+                  <tr>
+                    <td>Adam</td>
+                    <td>Johnson</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                  </tr>
+            </tbody>
+        </table>
+      </div>
+</div>
+</div>

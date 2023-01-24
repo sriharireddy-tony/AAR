@@ -9,7 +9,10 @@ export class MasterDataComponent implements OnInit {
 
   constructor() { }
 
+  tName:string = 'PMaster'
   ngOnInit(): void {
   }
-
+  tabClick(type:string){
+    this.tName = type;
+  }
 }
