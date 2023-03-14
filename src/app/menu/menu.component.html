@@ -33,12 +33,12 @@
         <li class="nav-item" *ngIf="tName =='partsSummary'">
             <a class="nav-link btnRed rounded-0" style="font-size:12px"><i class="fa-solid fa-file-export"></i><b>&nbsp;&nbsp;&nbsp;Export To Excel</b></a>
         </li>
-        <li class="nav-item" *ngIf="tName =='colourCoding'">
+        <li class="nav-item mx-2" *ngIf="tName =='colourCoding' || tName =='masterData' || tName =='partsSummary'" (click)="saveTab()">
             <a class="nav-link btnRed rounded-0" style="font-size:12px"><i class="fa-solid fa-file-shield"></i><b>&nbsp;&nbsp;&nbsp;Save</b></a>
         </li>
-        <li class="nav-item" *ngIf="tName =='masterData'">
+        <!-- <li class="nav-item" *ngIf="tName =='masterData'">
             <a class="nav-link btnRed rounded-0" style="font-size:12px"><i class="fa-solid fa-file-shield"></i><b>&nbsp;&nbsp;&nbsp;Save</b></a>
-        </li>
+        </li> -->
     </ul>
 </div>
 <div class=" mt-4 px-5">

@@ -1,11 +1,35 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
+    callCompFunction = new EventEmitter();    
+    subsVar: Subscription | undefined;   
 
   constructor() { }
+
+  callCompFunctionFun() {    
+    this.callCompFunction.emit();    
+  }
+
+  saveAllFunction = new EventEmitter();
+  saveAllMasterData(){
+    this.saveAllFunction.emit();
+  }
+  saveAllvar : Subscription | undefined;
+
+ 
+
+//   callPmasterFunction =  new EventEmitter();
+//   callmasterFunctiontest(){
+//        this.callPmasterFunction.emit();
+//   }
+//    pmastervar : Subscription | undefined;
+//    systemMastervar: Subscription | undefined;
+//    paintvar: Subscription | undefined;
+
 
   convertTupleToJson(obj:any, tblName: string){
     let filtered: any | undefined;

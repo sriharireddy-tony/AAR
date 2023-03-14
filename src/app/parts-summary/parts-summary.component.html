@@ -1,4 +1,4 @@
-<div class="container-fluid" style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
+<div class="container-fluid" style="overflow-x:scroll;border: 1px solid rgb(197, 196, 196);padding: 0px;">
     <table class="table table-bordered">
         <thead>
           <tr style="background-color:rgb(197, 196, 196)">
@@ -11,7 +11,7 @@
             <th scope="col" rowspan="2">Part Name</th>
             <th scope="col" rowspan="2">Part Image</th>
             <th scope="col" rowspan="2">Part Revision</th>
-            <th colspan="5" class="text-center">Variant</th>
+            <th [attr.colspan]=AARLOVData.length class="text-center">Variant</th>
             <th scope="col" rowspan="2">Stage</th>
             <th scope="col" rowspan="2">Colour</th>
             <th scope="col" rowspan="2">Grain</th>
@@ -19,41 +19,41 @@
             <th scope="col" rowspan="2">Digital Validation Status</th>
             <th scope="col" rowspan="2">Grain Go Ahead Validation details</th>
             <th scope="col" rowspan="2">Post Graining Validation Deatils</th>
-            <th scope="col" rowspan="2">Overall Parts Status</th>
+            <th scope="col" rowspan="2" style="width:165px">Overall Parts Status</th>
           </tr>
-          <tr style="background-color:rgb(197, 196, 196)">
-            <th scope="col">Low</th>
-            <th scope="col">Mid</th>
-            <th scope="col">High</th>
-            <th scope="col">High(o)</th>
-            <th scope="col"></th>
+          <tr style="background-color:rgb(197, 196, 196)" >
+            <th scope="col" *ngFor="let data of AARLOVData">{{data}}</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+          <tr *ngFor="let data of partsSummaryData  | paginate: {itemsPerPage: 10, currentPage: page, totalItems: totalLength }; let i=index">
+            <th>{{i+1}}</th>
+            <td></td>
+            <td><input type="text" class="form-control border-0" [(ngModel)]="data.AAR_PLATFORM"> </td>
+            <td><input type="text" class="form-control border-0" [(ngModel)]="data.AAR_PROJECTCODE"></td>
+            <td></td>
+            <td>{{data.AAR_PARTNUMBER}}</td>
+            <td>{{data.AAR_PARTNAME}}</td>
+            <td>img</td>
+            <td>Revision</td>
+            <td><input type="text" class="form-control border-0" [(ngModel)]="data.HIGH_3_VALUE" [readonly]="datavalidate(data.HIGH_3_ACTIVE)==''"></td>
+            <td><input type="text" class="form-control border-0" [(ngModel)]="data.HIGH_O__4_VALUE" [readonly]="datavalidate(data.HIGH_O__4_ACTIVE)==''"></td>
+            <td><input type="text" class="form-control border-0" [(ngModel)]="data.LOW_1_VALUE" [readonly]="datavalidate(data.LOW_1_ACTIVE)==''"></td>
+            <td><input type="text" class="form-control border-0" [(ngModel)]="data.MID_2_VALUE" [readonly]="datavalidate(data.MID_2_ACTIVE)==''"></td>
+            <td>stage</td>
+            <td>{{data.AAR_COLOR}}</td>
+            <td>{{data.AAR_GRAIN_COLOR}}</td>
+            <td>{{data.AAR_GLOSS_COLOR}}</td>
+            <td>{{data.AAR_DIGITAL_STATUS}}</td>
+            <td>ahead</td>
+            <td>postgraining</td>
+            <td style="vertical-align:middle;">
+              <p-slider class="pslider" [(ngModel)]="data.AAR_OVERALL_STATUS" [min]="0" [max]="100" #slider [disabled]="true"></p-slider></td>
           </tr>
         </tbody>
       </table>
+</div>
+<div class="mt-2">
+  <pagination-controls id="paginationcolor" style="height:30px;float: right;"  (pageChange)="partsSummaryPagination($event)"></pagination-controls>
+  <p style="height:10px;float: right;">Number of Records: <b>{{partsSummaryData.length}}</b></p>
 </div>

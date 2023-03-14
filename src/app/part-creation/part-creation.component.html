@@ -1,101 +1,870 @@
-<div class="container-fluid">
-    <div class="row d-flex">
-        <div class="col-lg-6">
-            <h5 class="float-start" style="color:red"><b>General Details</b>(<small>To be filled by Design</small>)</h5>
-        </div>
-        <div class="col-lg-6">
-            <h5 class="float-end" style="color:black">Current Stage :Design</h5>
-        </div>
-    </div>
-    <div class="mt-4 col-lg-12">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="row borderRadius">
-                    <div class="col-lg-6">
-                        <span>Sector <span class="sup">*</span><span></span></span>
-                    </div>
-                    <div class="col-lg-6 veticalLine">
-                        <select class="form-select">
-                            <option value="">--Select--</option>
-                            <option>gdffghh</option>
-                        </select>
-                    </div>
-                </div>
+<form [formGroup]="aarDetailsForm">
+    <div class="container-fluid">
+        <div class="row d-flex">
+            <div class="col-lg-6 ps-0">
+                <h5 class="float-start" style="color:red"><b>General Details</b>(<small>To be filled by Design</small>)
+                </h5>
             </div>
-            <div class="col-lg-4">
-                <div class="row borderRadius">
-                    <div class="col-lg-6">
-                        <span>Platform <span class="sup">*</span><span></span></span>
-                    </div>
-                    <div class="col-lg-6 veticalLine">
-                        <select class="form-select">
-                            <option value="">--Select--</option>
-                            <option>gdffghh</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="row borderRadius">
-                    <div class="col-lg-6">
-                        <span>Project Code <span class="sup">*</span><span></span></span>
-                    </div>
-                    <div class="col-lg-6 veticalLine">
-                        <select class="form-select selectpicker">
-                            <option value="">--Select--</option>
-                            <option>gdffghh</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="col-lg-6">
+                <h5 class="float-end" style="color:black">Current Stage :Design</h5>
             </div>
         </div>
-    </div>
-    <div class="mt-5 col-lg-12">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="row borderRadius">
-                    <div class="col-lg-6">
-                        <span>Variant <span class="sup">*</span><span></span></span>
-                    </div>
-                    <div class="col-lg-6 veticalLine">
-                        <select class="form-select">
-                            <option value="">--Select--</option>
-                            <option>gdffghh</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="row borderRadius">
-                    <div class="col-lg-6">
-                        <span>Stage <span class="sup">*</span><span></span></span>
-                    </div>
-                    <div class="col-lg-6 veticalLine">
-                        <select class="form-select">
-                            <option value="">--Select--</option>
-                            <option>gdffghh</option>
-                        </select>
+        <div class="mt-2 col-lg-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="row borderRadius">
+                        <div class="col-lg-6">
+                            <span>Sector <span class="sup">*</span><span></span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine px-0">
+
+                            <select class="form-select" formControlName="AAR_SECTOR">
+                                <option value="">--Select--</option>
+                                <!-- <option value="Automative Division(AD)">Automative Division(AD)</option>
+                                <option value="Automative Division(AD)">Automative Division(AD)</option>
+                                <option value="Automative Division(AD)">Automative Division(AD)</option> -->
+                                <!-- <option *ngFor="let projectMaster of projectMasterDetailsList">Automative Division(AD)</option> -->
+                                <option value="projectMaster.AAR_SECTOR" *ngFor="let projectMaster of projectMasterDetailsList">
+                                    {{projectMaster.AAR_SECTOR}}
+                                </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="row borderRadius">
-                    <div class="col-lg-6">
-                        <span>Commodity <span class="sup">*</span><span></span></span>
+                <div class="col-lg-4">
+                    <div class="row borderRadius">
+                        <div class="col-lg-6">
+                            <span>Platform <span class="sup">*</span><span></span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine px-0">
+                            <select class="form-select" formControlName="AAR_PLATFORM">
+                                <option value="">--Select--</option>
+                                <!-- <option value="w6">W6</option>
+                                <option value="w6">W6</option> -->
+                                <option *ngFor="let projectMaster of projectMasterDetailsList" [value]="projectMaster.AAR_PLATFORM"
+                                >{{projectMaster.AAR_PLATFORM}}</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-lg-6 veticalLine">
-                        <select class="form-select">
-                            <option value="">--Select--</option>
-                            <option>gdffghh</option>
-                        </select>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row borderRadius">
+                        <div class="col-lg-6">
+                            <span>Project Code <span class="sup">*</span><span></span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine px-0">
+                            <select class="form-select selectpicker" formControlName="AAR_PROJECTCODE">
+                                <!-- <option value="">--Select--</option>
+                                <option value="W601">W601</option>
+                                <option value="W601">W601</option> -->
+                                <option value="">--Select--</option>
+                                <option *ngFor="let projectMaster of projectMasterDetailsList"
+                                [value]="projectMaster.AAR_PROJECTCODE">
+                                    {{projectMaster.AAR_PROJECTCODE}}
+                                </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="mt-2 col-lg-12 pb-4" style="border-bottom: 1px solid #6c757d;">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="row borderRadius">
+                        <div class="col-lg-6">
+                            <span>Variant <span class="sup">*</span><span></span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine">
+                            <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [settings]="dropdownSettings"
+                                [data]="variantDetailsList" formControlName="AAR_VARIANT"
+                                (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4    ">
+                    <div class="row borderRadius">
+                        <div class="col-lg-6">
+                            <span>Stage <span class="sup">*</span><span></span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine px-0">
+                            <select class="form-select" formControlName="AAR_STAGE">
+                                <!-- <option value="">--Select--</option>
+                                <option value="CAS1">CAS1</option> -->
+                                <option value="">--Select--</option>
+                                <option *ngFor="let stage of stageDetailsList" [value]="stage.LMF_ID"
+                                >{{stage.LMF_ID}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row borderRadius">
+                        <div class="col-lg-6">
+                            <span>Commodity <span class="sup">*</span><span></span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine px-0">
+                            <select class="form-select" formControlName="AAR_COMMODITY">
+                                <!-- <option value="">--Select--</option>
+                                <option value="Mechanism">Mechanism</option> -->
+                                <option value="">--Select--</option>
+                                <option *ngFor="let Commodity of commodityDetailsList" [value]="Commodity.LMF_ID">
+                                    {{Commodity.LMF_ID}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-4">
+            <div class="col-lg-4">
+                <div class="row">
+                    <h5 class="float-start ps-0" style="color:red"><b>Part Details</b>(<small>To be filled by
+                            Design</small>)
+                    </h5>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Part Name <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" formControlName="AAR_PARTNAME">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Part Number <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" formControlName="AAR_PARTNUMBER">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Color Definition <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+
+                        <select class="form-select" formControlName="AAR_COLOR"
+                            [ngClass]="{'boxredborder':saveFlag && aarDetailsForm.get('AAR_COLOR')?.invalid}">
+                            <!-- <select class="form-select"> -->
+                                <!-- <select class="form-select"> -->
+                                    <option value="">--Select--</option>
+                                    <!-- <option value="MM2105">MM2105</option>
+                                    <option value="MM2105">MM2105</option>
+                                    <option value="MM2105">MM2105</option> -->
+                                    <option [value]="color.AARP_COLOR_NAME"
+                                        *ngFor="let color of ColorCodeList">
+                                        {{color.AARP_COLOR_NAME}}
+                                    </option>
+                                    <option></option>
+                                <!-- </select> -->
+                            </select>
+                        <!-- </select> -->
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Grain Definition <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <select class="form-select" formControlName="AAR_PLATFORM"
+                            [ngClass]="{'boxredborder':saveFlag && aarDetailsForm.get('AAR_PLATFORM')?.invalid}">
+                            <option value="">--Select--</option>
+                            <option [value]="grain.AARG_COLOR_CODE"
+                                *ngFor="let grain of GrainColordetailsList">
+                                {{grain.AARG_COLOR_CODE}}
+                            </option>
+                            <!-- <select class="form-select">
+                                <option value="">--Select--</option>
+                                <option></option>
+                            </select> -->
+                        </select>
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Gross Definition <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine">
+                        <select class="form-select selectpicker" formControlName="AAR_PROJECTCODE"
+                            [ngClass]="{'boxredborder':saveFlag && aarDetailsForm.get('AAR_PROJECTCODE')?.invalid}">
+                            <option value="">--Select--</option>
+                            <option [value]="grain.AARG_GLOSS_GRAMS"
+                                *ngFor="let grain of GrainColordetailsList">
+                                {{grain.AARG_GLOSS_GRAMS}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-6 veticalLine px-0">
+                            <input type="text" class="form-control">
+                        </div> -->
+
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Generic Name <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Material Grade <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" formControlName="AAR_ENG_MATERIAL_GRADE">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <h5 class="float-start ps-0" style="color:red"><b>Part Revision</b>(<small>To be filled by
+                            Design</small>)
+                    </h5>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Part Scope <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                            <select class="form-select" formControlName="AAR_PART_SCOPE">
+                                <option value="">--Select--</option>
+                                <option value="type.LMF_DESC" *ngFor="let type of partscopelist">{{type.LMF_DESC}}</option>
+                                <option></option>
+                            </select>
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Class A Revision <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" placeholder="Enter class rev" class="form-control"
+                            formControlName="AAR_CLASS_REV">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Engineering Revision <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" placeholder="Enter engg rev" class="form-control"
+                            formControlName="AAR_ENG_REV">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <h5 class="float-start ps-0" style="color:red"><b>Part Leader Details</b>(<small>To be filled by
+                            Design</small>)
+                    </h5>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Class A Designer <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="icon form-control" placeholder="search&select"
+                            formControlName="AAR_CLASSA_DESIGNER">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>CMF Designer <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="icon form-control" placeholder="search&select"
+                            formControlName="AAR_CMF_DESIGNER">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Design Project Management <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="icon form-control" placeholder="search&select"
+                            formControlName="AAR_PROJECT_MANAGEMENT">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Chief Platform Head <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="icon form-control" placeholder="search&select"
+                            formControlName="AAR_PLATFORM_HEAD">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Platform Engineering Head <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="icon form-control" placeholder="search&select"
+                            formControlName="AAR_PLATFORM_ENG_HEAD">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Engineering Design <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" placeholder="search&select" class="icon form-control"
+                            formControlName="AAR_ENG_DESIGN">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Trim CDMM CMF <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" formControlName="AAR_TRIM_CDMM">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Trim STA <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" formControlName="AAR_TRIM_STA">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class=" col-lg-8">
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <h5 class="float-start ps-0" style="color:red"><b>Part image</b>(<small>To be filled by
+                                    Design</small>)
+                            </h5>
+                        </div>
+                        <div class="row borderRadius mt-2" style="border: none !important;">
+                            <div class="p-0">
+                                <div class="position-relative">
+                                    <button style="z-index:9;" class="buttonCss">
+                                        <!-- ng-click="openUploadImage('upload')" class="buttonCss" ng-show="(aar.ImagePath == null 
+                                 || aar.ImagePath == '' || 
+                                 aar.ImagePath == undefined)?true:false" -->
+                                        <!-- <img src='./Images/plus.PNG'> -->
+                                        <i class="fa-solid fa-plus"></i>
+
+                                    </button>
+
+
+                                    <div style="border: 1px solid #ddd; background-color: #adadad; min-height: 300px;max-height: 300px;min-width: 395px; max-width: 360px; overflow: hidden;
+                                    text-align:center;cursor: pointer;
+                                        border-radius: 5px;">
+                                        <!-- ng-show="(aar.ImagePath == null 
+                                        || aar.ImagePath == '' || 
+                                        aar.ImagePath == undefined)?true:false" -->
+                                        <label style="position: relative;color: red;width: 
+                                 100%;height: 100%;padding-top: 50%;
+                                                        cursor: pointer;">
+                                            Click here to ADD IMAGE</label>
+                                        <!-- <span ng-show="(aar.ImagePath == null 
+                                                            || aar.ImagePath == '' || 
+                                                            aar.ImagePath == undefined)?true:false">
+                                            <img ng-show="aar.ImagePath" class="imageCustomcss img-responsive"
+                                                src="{{aar.ImagePath}}" style="min-height: 380px;"></span>
+            
+                                        <span ng-show="(aar.ImagePath != null 
+                                                                                       && aar.ImagePath != '' &&
+                                                                                       aar.ImagePath != undefined)?true:false">
+                                            <img ng-show="aar.ImagePath" class="imageCustomcss img-responsive"
+                                                src="{{aar.ImagePath}}" style="min-height: 380px;"></span> -->
+
+                                    </div>
+                                    <form id="docForm" style="display: none;">
+                                        <input id="imgUpload" type="file" custom-on-change="uploadImgAttach"
+                                            style="visibility: hidden" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <h5 class="float-start ps-0 mt-4" style="color:red">Overall Status</h5>
+                            </div>
+                            <div style="border: 1px solid #ddd; background-color: hwb(0 84% 15%);
+                           min-height: 300px;max-height: 300px;min-width: 395px; max-width: 360px; overflow: hidden;text-align:center;cursor: pointer;
+                          border-radius: 5px;" class="ps-0 mt-4">
+                                <span><b>Approval Done</b></span>&nbsp;&nbsp;&nbsp;<span><b>Approval Pending</b></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5 class="float-start ps-0 mt-4" style="color:red">
+                                <b>CDMM CMF Evaluation</b>(<small>To be filled by CDMM</small>)
+                                <hr style="width: 36%;margin: 0px;position: absolute;margin-left: 410px;
+                                align-content: center;margin-top:-10px;border-top: 1px solid black">
+                            </h5>
+                        </div>
+                        <div class="row borderRadius mt-4">
+                            <div class="col-lg-6">
+                                <span>Color <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <select class="form-select">
+                                    <select class="form-select" formControlName="AAR_COLOR">
+                                        <option value="">--Select--</option>
+                                        <option></option>
+                                    </select>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Grain <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <select class="form-select">
+                                    <select class="form-select">
+                                        <option value="">--Select--</option>
+                                        <option></option>
+                                    </select>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Gloss <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <select class="form-select">
+                                    <select class="form-select" formControlName="AAR_ENG_GLOSS_DEF">
+                                        <option value="">--Select--</option>
+                                        <option></option>
+                                    </select>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row borderRadius" style="margin-left: 480px;position: relative;margin-top: -130px;">
+                            <div class="col-lg-6">
+                                <span>Aspect <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <select class="form-select" formControlName="AAR_ASPECT_COLOR">
+                                    <select class="form-select">
+                                        <option value="">--Select--</option>
+                                        <option></option>
+                                    </select>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2" style="margin-left: 480px;position: relative;">
+                            <div class="col-lg-6">
+                                <span>Aspect 2 <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <select class="form-select">
+                                    <select class="form-select">
+                                        <option value="">--Select--</option>
+                                        <option></option>
+                                    </select>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2" style="margin-left: 480px;position: relative;">
+                            <div class="col-lg-6">
+                                <span>Aspect 3 <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <select class="form-select">
+                                    <select class="form-select">
+                                        <option value="">--Select--</option>
+                                        <option></option>
+                                    </select>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <h5 class="float-start ps-0" style="color:red"><b>CDMM Details</b>(<small>To be filled by
+                                    CDMM</small>)
+                            </h5>
+                        </div>
+                        <div class="row borderRadius">
+                            <div class="col-lg-6">
+                                <span>CDMM STA <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <input type="text" class="icon form-control" placeholder="search&select" 
+                                formControlName="AAR_CDMM_STA">
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Tooling SPOC <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <input type="text" class="icon form-control" placeholder="search&select"
+                                formContolName="">
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>CDMM CMF <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <input type="text" class="icon form-control" formControlName="AAR_CDMM_CMF"
+                                    placeholder="search&select">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <h5 class="float-start ps-0" style="color:red"><b>Part Supplier Details</b>(<small>To be
+                                    filled by CDMM</small>)
+                            </h5>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Tier1 <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <input type="text" class="icon form-control" formControlName="AAR_TIER1">
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Tier1 Location <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <!-- <select class="form-select"> -->
+                                    <select class="form-select" formControlName="AAR_TIER1_LOC">
+                                        <option value="">--Select--</option>
+                                        <option [value] = "item.LMF_ID" *ngFor="let item of Tier1LocationList">{{item.LMF_DESC}}</option>
+                                    </select>
+                                <!-- </select> -->
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Texture Supplier <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <input type="text" class="icon form-control" formControlName="AAR_TIER1_SUPPLIER">
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Texture Supplier Location <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <!-- <select class="form-select"> -->
+                                    <select class="form-select" formControlName="AAR_TIER1_SUPP_LOC">
+                                        <option value="">--Select--</option>
+                                        <option *ngFor="let list of textureSupplierLocationlist">{{list.LMF_DESC}}</option>
+                                    </select>
+                                <!-- </select> -->
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <h5 class="float-start ps-0" style="color:red"><b>Validation Documents</b>(<small>To be
+                                    filled by CDMM</small>)
+                            </h5>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Draft Analysis <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <span>{{fileName}}</span>
+                                <!-- <input type="text" class="form-control"  formControlName="AAR_ENG_DRAFT_ANALYSIS"> -->
+                                <input type="file" class="file" style="display:none;"
+                                    formControlName="AAR_ENG_DRAFT_ANALYSIS" #file accept="image.jpg,image.png"
+                                    (change)="onFileChanged($event)">
+                                <i class="fa-sharp fa-solid fa-file-image" (click)="file.click()"
+                                    style="color: red;font-size: 25px;float: right;margin:5px"></i>
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Digital Grain Mapping <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                               
+                                <!-- <input type="text" class="form-control"> -->
+                                <input type="file" class="file" style="display:none;"
+                                    formControlName="AAR_ENG_DRAFT_ANALYSIS" #file accept="image.jpg,image.png"
+                                    (change)="onFileChanged($event)">
+                                <i class="fa-sharp fa-solid fa-file-image" (click)="file.click()"
+                                    style="color: red;font-size: 25px;float: right;margin:5px"></i>
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Physical Grain Mapping <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <!-- <input type="text" class="form-control" formControlName="AAR_PHYSICAL_GRAIN_MAPPING"> -->
+                                <input type="file" class="file" style="display:none;"
+                                    formControlName="AAR_ENG_DRAFT_ANALYSIS" #file accept="image.jpg,image.png"
+                                    (change)="onFileChanged($event)">
+                                <i class="fa-sharp fa-solid fa-file-image" (click)="file.click()"
+                                    style="color: red;font-size: 25px;float: right;margin:5px"></i>
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>Uploaded By <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <input type="text" class="form-control" placeholder="AutoFetch">
+                            </div>
+                        </div>
+                        <div class="row borderRadius mt-2">
+                            <div class="col-lg-6">
+                                <span>CDMM Comments <span class="sup">*</span><span></span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine px-0">
+                                <input type="text" class="form-control" placeholder="Enter CDMM Comments">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-lg-4">
+                <div class="row">
+                    <h5 class="float-start ps-0" style="color:red"><b>Digital Validation Details</b>(<small>To be filled
+                            by Design</small>)
+                    </h5>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Engineering Data Verification <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <ng-multiselect-dropdown
+                            [ngClass]="{'boxredborder':saveFlag && aarDetailsForm.get('AAR_VARIANT')?.invalid}"
+                            [placeholder]="'select variant'" [settings]="dropdownSettings" [data]="variantDetailsList"
+                            formControlName="AAR_VARIANT" (onSelect)="onItemSelect($event)"
+                            (onSelectAll)="onSelectAll($event)">
+                        </ng-multiselect-dropdown>
+                        <!-- <div class="col-lg-6 veticalLine px-0">
+                            <input type="text" class="form-control">
+                        </div> -->
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Draft Analysis <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" formControlName="AAR_ENG_DRAFT_ANALYSIS"
+                            placeholder="Not Uploaded /DD MM YYYY">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Digital Grain Mapping <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Not Uploaded /DD MM YYYY"
+                            formControlName="AAR_ENG_DIGITAL_GRAIN_MAPP">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Tool Kickoff Approval <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter ToolKickoff Approval"
+                            formControlName="AAR_TOTAL_KICK_OFF">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Status <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Status" formControlName="AAR_STATUS">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Design Comments<span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Design Comments" formControlName=" ">
+                    </div>
+                </div>
+
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Approved By <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Auto Fetch Name/Token ID">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <h5 class="float-start ps-0" style="color:red"><b>Grain Go ahead Validation Details</b>
+                        <!-- (<small>To be filled by
+                        Design</small>) -->
+                    </h5>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Form /Shape Validation <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine">
+                        <select class="form-select" formControlName="AAR_COMMODITY"
+                            [ngClass]="{'boxredborder':saveFlag && aarDetailsForm.get('AAR_COMMODITY')?.invalid}">
+                            <option value="">--Select--</option>
+                            <option *ngFor="let stage of stageDetailsList">{{stage.LMF_DESC}}</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>No. of Cavity <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Number of Cavity"
+                            formControlName="AAR_NO_OF_CAVITY">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Cavity Validation Remarks <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter cavity validation Remarks"
+                            formControlName="AAR_CAVITY_VALIDATION_REMARKS">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Physical Grain Mapping <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Not Uploaded"
+                            formControlName="AAR_PHYSICAL_GRAIN_MAPPING">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Status <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Status" formControlName="AAR_STATUS">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Design Comments <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Design Comments">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Approved By <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Auto Fetch Name/Token ID">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <h5 class="float-start ps-0" style="color:red"><b>Post Grain Validation Details</b>(<small>To be filled by
+                        Design</small>)
+                    </h5>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Color <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <select class="form-select" formControlName="AAR_STAGE"
+                            [ngClass]="{'boxredborder':saveFlag && aarDetailsForm.get('AAR_STAGE')?.invalid}">
+                            <option value="">--Select--</option>
+                            <option *ngFor="let Commodity of commodityDetailsList">{{Commodity.LMF_DESC}}
+                            </option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Grain <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Grain">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Gloss <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Gloss"
+                            formControlName="AAR_GLOSS_COLOR">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Aspect <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Aspect"
+                            formControlName="AAR_ASPECT_COLOR">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Status <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Status"
+                            formControlName="AAR_GRAIN_STATUS">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Design Comments <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Enter Design Comments">
+                    </div>
+                </div>
+                <div class="row borderRadius mt-2">
+                    <div class="col-lg-6">
+                        <span>Approved By <span class="sup">*</span><span></span></span>
+                    </div>
+                    <div class="col-lg-6 veticalLine px-0">
+                        <input type="text" class="form-control" placeholder="Auto Fetch Name/Token">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-12 mt-4 text-center">
+                <button class="btn blackBtn mx-3">Save</button>
+                <button class="btn blackBtn" (click)="publishData()">Publish</button>
+                <button class="btn blackBtn mx-3">Part Status</button>
+            </div>
+
+            <div class="col-lg-12 mt-5" style="text-align:center">
+                <button class="btn blackBtn mx-3" (click)="saveAARDetails()">Save</button>
+                <button class="btn blackBtn" *ngIf="false">Publish</button>
+                <button class="btn blackBtn mx-3" *ngIf="false">Part Status</button>
+            </div>
+
+        </div>
     </div>
-    <div class="col-lg-12 mt-5" style="text-align:center">
-        <button class="btn blackBtn mx-3">Save</button>
-        <button class="btn blackBtn">Publish</button>
-        <button class="btn blackBtn mx-3">Part Status</button>
-    </div>
-</div>
+
+
+</form>

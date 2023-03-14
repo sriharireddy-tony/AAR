@@ -2,3 +2,89 @@
     border-bottom: 3px solid red;
     margin-bottom: -8px;
 }
+ select{
+    background-image: url('../master-data/image.png');
+    background-size: 7px;
+    background-repeat: no-repeat;
+    appearance: none;
+    /*background-position: right;
+     width: 100%!important;
+     border-image-width: 100px!important; */
+    background-position: left 100% top 50%;
+    background-position-y: left;
+    border: none;
+    width: 100%;
+    width: 110px;
+   
+ }
+ /* style="background-position: left 100% top 50%;width:100%" */
+.cl1::-webkit-datetime-edit-text {
+    -webkit-appearance: none;
+    display: none;
+  }
+  .cl1::-webkit-datetime-edit-month-field {
+    -webkit-appearance: none;
+    display: none;
+  }
+  .cl1::-webkit-datetime-edit-day-field {
+    -webkit-appearance: none;
+    display: none;
+  }
+  .cl1::-webkit-datetime-edit-year-field {
+    -webkit-appearance: none;
+    display: none;
+  }
+  .cl1 {
+    border: none;
+    width: 10px;
+    position: absolute;
+  } 
+   input{
+    width: 100%;
+    border: none;
+  }
+   .tblcontainer{
+    max-height: fit-content;
+  } 
+  .tbl-fixed{
+    overflow-y: scroll;
+    height: fit-content;
+    max-height: 100vh;
+    margin-top: 30px;
+    margin: 5px;
+  }
+  table{
+    min-width: fit-content;
+    border-collapse: collapse;
+  }
+  thead{
+    position: sticky;
+    top: 0px;
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    z-index: 999!important;
+  }
+  table td{
+    text-align: left;
+  }
+  /* input[type="date"]{
+    position: static;
+    width: 100%;
+  } */
+  input[type="text"]{
+    width: 100px;
+    padding: 4px;
+ 
+  }
+  #paintdate{
+    width: 20px;
+  }
+ .p-calendar .p-inputtext {
+  width: 0px!important;
+
+ }
+
+ 
+ 
+  
+  

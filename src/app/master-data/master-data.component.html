@@ -31,278 +31,810 @@
     </div>
 </div>
 
-<div class="col-lg-12 mt-4" *ngIf="tName == 'Paint'">
-    <div style="background-color:rgb(197, 196, 196);">
-        <div class="py-2"><b>Paint</b></div>
-    </div>
-    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
-        <table class="table table-bordered">
-            <thead style="background-color:rgb(240, 240, 240)">
-                <tr>
-                    <th rowspan="3">S.No</th>
-                    <th rowspan="3">Color Name</th>
-                    <th rowspan="3">Color Code</th>
-                    <th rowspan="3">Paint System</th>
-                    <th rowspan="3">Paint Finish Type</th>
-                    <th rowspan="3">Date Master Relization</th>
-                    <th rowspan="3">Applicable Part</th>
-                    <th rowspan="3">Application in Plant</th>
-                    <th rowspan="3">Workability Confirmation Date</th>
-                    <th rowspan="3">COE Testing Passed Date</th>
-                    <th rowspan="3">Supplier</th>
-                    <th colspan="3">Instrument Name BYK</th>
-                    <th rowspan="3">Glose @20Deg</th>
-                    <th rowspan="3">Designer</th>
-                    <th rowspan="3">Created by</th>
-                    <th rowspan="3">Project</th>
-                    <th rowspan="3">Upload Plaque Image</th>
-                </tr>
-                <tr>
-                    <th colspan="3">Color Values</th>
-                </tr>
-                <tr>
-                    <th>L</th>
-                    <th>A</th>
-                    <th>B</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-
-                </tr>
-            </tbody>
-        </table>
+<div class="container-fluid">
+    <div class="col-lg-4 mt-4" *ngIf="tName == 'PMaster'">
+        <div style="background-color:rgb(197, 196, 196);" class="rounded-top">
+            <div class="p-3"><b>Project Master</b></div>
+        </div>
+        <div class="col-lg-8 mt-4" style="border: 1px solid rgb(197, 196, 196);" class="tblcontainer">
+            <div class="row tbl-fixed">
+                <table class="table table-bordered table-responsive table-condensed">
+                    <thead style="background-color:rgb(240, 240, 240);">
+                        <tr>
+                            <th scope="col" rowspan="2">
+                                Sector</th>
+                            <th scope="col" rowspan="2">Platform</th>
+                            <th scope="col" rowspan="2">Project Code</th>
+                            <th scope="col" rowspan="2">Project Name</th>
+                            <th>
+                                <i class="fa fa-plus" (click)="Addpmasterdetails()"
+                                    style="color: red;font-size: 20px;"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of projectMasterList;let i=index">
+                            <td>
+                                <input type="text" class="form-control" name="AAR_sector" style="width:50px"
+                                    [(ngModel)]="item.AAR_SECTOR">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="AAR_PLATFORM" style="width:50px"
+                                    [(ngModel)]="item.AAR_PLATFORM">
+                            </td>
+                            <td>
+                                <select id="standard-select" class="form-control" name="AAR_PROJECT_CODE"
+                                    [(ngModel)]="item.AAR_PROJECT_CODE">
+                                    <option value="">--Select--</option>
+                                    <option value="warpknit">Z101</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="AAR_PROJECT_NAME"
+                                    [(ngModel)]="item.AAR_PROJECT_NAME">
+                            </td>
+                            <td><i class="fa fa-trash" (click)="Deletepmasterdetails(item)"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="col-lg-12 mt-4" *ngIf="tName == 'PMIC'">
-    <div style="background-color:rgb(197, 196, 196);">
-        <div class="py-2"><b>Plastic MIC</b></div>
-    </div>
-    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
-        <table class="table table-bordered">
-            <thead style="background-color:rgb(240, 240, 240)">
-                <tr>
-                    <th rowspan="3">S.No</th>
-                    <th rowspan="3">Color Name</th>
-                    <th rowspan="3">Color Code</th>
-                    <th rowspan="3">Material Grade</th>
-                    <th rowspan="3">MIC Finish Type</th>
-                    <th rowspan="3">Date Master Relization</th>
-                    <th rowspan="3">Applicable Part</th>
-                    <th rowspan="3">Application in Plant</th>
-                    <th rowspan="3">Supplier</th>
-                    <th colspan="3">Instrument Name BYK</th>
-                    <th rowspan="3">Glose @20Deg</th>
-                    <th rowspan="3">Designer</th>
-                    <th rowspan="3">Created by</th>
-                    <th rowspan="3">Project</th>
-                    <th rowspan="3">Upload Plaque Image</th>
-                </tr>
-                <tr>
-                    <th colspan="3">Color Values</th>
-                </tr>
-                <tr>
-                    <th>L</th>
-                    <th>A</th>
-                    <th>B</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>Mark</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-
-                </tr>
-            </tbody>
-        </table>
+<div class="container-fluid">
+    <div class="col-lg-4 mt-4" *ngIf="tName == 'SCreator'">
+        <div style="background-color:rgb(197, 196, 196);" class="rounded-top mt-3">
+            <div>
+                <div class="p-3"><b>System Master</b></div>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-4" style="border: 1px solid rgb(197, 196, 196);" class="tblcontainer">
+            <div class="row tbl-fixed">
+                <table class="table table-bordered table-responsive table-condensed">
+                    <thead style="background-color:rgb(240, 240, 240);">
+                        <tr>
+                            <th scope="col" rowspan="3">
+                                System</th>
+                            <th scope="col" rowspan="3">System Code</th>
+                            <th scope="col" rowspan="3">
+                                <i class="fa fa-plus" (click)="AddSmasterdetails()"
+                                    style="color: red;font-size: 20px;"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of sMasterList">
+                            <td>
+                                <input style="width:100%" type="text" class="form-control" name="AAR_SYSTEM"
+                                    [(ngModel)]="item.AAR_SYSTEM">
+                            </td>
+                            <td>
+                                <select style="background-position: left 100% top 50%;" class="form-control"
+                                    name="AAR_SYSTEM_CODE" [(ngModel)]="item.AAR_SYSTEM_CODE">
+                                    <option value="">--Select--</option>
+                                    <option value="Emboss">Z101</option>
+                                    <option value="S201">S201</option>
+                                </select>
+                            </td>
+                            <td>
+                                <i class="fa fa-trash" (click)="DeleteSmasterdetails(item)"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
-<div class="col-lg-12 mt-4" *ngIf="tName == 'STrim'">
-    <div style="background-color:rgb(197, 196, 196);">
-        <div class="py-2"><b>Soft Trim</b></div>
-    </div>
-    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
-        <table class="table table-bordered">
-            <thead style="background-color:rgb(240, 240, 240)">
-                <tr>
-                    <th rowspan="3">S.No</th>
-                    <th rowspan="3">Color Name</th>
-                    <th rowspan="3">Color Code</th>
-                    <th rowspan="3">Material Specification</th>
-                    <th rowspan="3">Material Construction</th>
-                    <th rowspan="3">Surface Treatment</th>
-                    <th rowspan="3">Lamination Thickness</th>
-                    <th rowspan="3">Application Area</th>
-                    <th rowspan="3">Stretch/Weft Warp</th>
-                    <th colspan="3">Date Of Master Relization</th>
-                    <th rowspan="3">Supplier</th>
-                    <th rowspan="3">Designer</th>
-                    <th rowspan="3">Cost of material</th>
-                    <th rowspan="3">Created by</th>
-                    <th rowspan="3">Project</th>
-                    <th rowspan="3">Upload Plaque Image</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>Mark</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
 
-                </tr>
-            </tbody>
-        </table>
+<div class="container-fluid">
+    <div class="col-lg-12 mt-4" *ngIf="tName == 'Paint'">
+        <div style="background-color:rgb(197, 196, 196);" class="rounded-top">
+            <div class="p-3"><b>Paint</b></div>
+        </div>
+        <div class="col-lg-12 mt-2" style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);" class="tblcontainer">
+            <div class="row tbl-fixed">
+                <table class="table table-bordered table-condensed" id="ptable">
+                    <thead style="background-color:rgb(240, 240, 240)">
+                        <tr>
+                            <th scope="col" rowspan="3"><i class="fa fa-plus" (click)="AddPaintdetails()"
+                                    style="color: red;font-size: 20px;"></i></th>
+                            <th scope="col" rowspan="3">S.No</th>
+                            <th scope="col" rowspan="3">Color Name</th>
+                            <th scope="col" rowspan="3">Color Code</th>
+                            <th scope="col" rowspan="3">Paint System</th>
+                            <th scope="col" rowspan="3">Paint Finish Type</th>
+                            <th scope="col" rowspan="3">Date of Master Realization</th>
+                            <th scope="col" rowspan="3">Applicable Part</th>
+                            <th scope="col" rowspan="3">Application in Plant</th>
+                            <th scope="col" rowspan="3">Workability Confirmation Date</th>
+                            <th scope="col" rowspan="3">COE Testing Passed Date</th>
+                            <th scope="col" rowspan="3">Supplier</th>
+                            <th scope="col" colspan="3">Instrument Name BYK</th>
+                            <th scope="col" rowspan="3">Gloss @20Deg</th>
+                            <th scope="col" rowspan="3">Designer</th>
+                            <th scope="col" rowspan="3">Created By</th>
+                            <th scope="col" rowspan="3">Project</th>
+                            <th scope="col" rowspan="3">Upload Plaque Image</th>
+                        </tr>
+                        <tr class="rowstatic">
+                            <th colspan="3" scope="col">Color Values</th>
+                        </tr>
+                        <tr class="rowstatic">
+                            <th>L</th>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let pitem of paintdetailslist;let i=index">
+                            <td><i class="fa fa-trash" (click)="DeletePaintdetails(pitem)"></i></td>
+                            <td>{{i+1}}</td>
+                            <td>
+                                <input type="text" class="form-control" name="AARP_COLOR_NAME"
+                                    [(ngModel)]="pitem.AARP_COLOR_NAME">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="AARP_COLOR_CODE"
+                                    [(ngModel)]="pitem.AARP_COLOR_CODE">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="AARP_SYSTEM"
+                                    [(ngModel)]="pitem.AARP_SYSTEM">
+                            </td>
+                            <td>
+                                <select class="form-control" name="AARP_FINISH_TYPE"
+                                    [(ngModel)]="pitem.AARP_FINISH_TYPE">
+                                    <option value="">--Select--</option>
+                                    <option value="solid">Solid</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div class="p-field p-col-12 p-md-4" class="main-container">
+                                    Date:
+                                    <p-calendar appendTo="body" inputId="icon" dataType="string" dateFormat="dd-mm-yy"
+                                        [style]="{'width':'100%', 'height':'10px'}"
+                                        [inputStyle]="{'width':'120px','height': '10px','margin-left':'0px'}"
+                                        (onSelect)="onSelectTargetDate($event)" [showIcon]="true"
+                                        [(ngModel)]="pitem.AARP_MASTER_DATE"></p-calendar>
+                                </div>
+                                <!-- <div>
+                                        <p-calendar [(ngModel)]="pitem.AARP_MASTER_DATE" [showIcon]="true"></p-calendar>
+                                      </div> -->
+                                <!-- <span>
+                                        <input type="date" class="cl1" style="width:20px" 
+                                         [(ngModel)]="pitem.AARP_MASTER_DATE">
+                                    </span> -->
+                            </td>
+                            <td>
+                                <select class="form-control" name="AARP_APPLICABLE_PART"
+                                    [(ngModel)]="pitem.AARP_APPLICABLE_PART">
+                                    <option value="">--Select--</option>
+                                    <option value="Exterior">Exterior</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" name="AARP_PLANT" [(ngModel)]="pitem.AARP_PLANT">
+                                    <option value="">--Select--</option>
+                                    <option value="solid">Nashik</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </td>
+                            <td>Date:
+                                <!-- <span>
+                                        <input type="date" class="cl1" style="width:20px" 
+                                         [(ngModel)]="pitem.AARP_WORK_DATE">
+                                    </span> -->
+                                <div class="p-field p-col-12 p-md-4" class="main-container">
+                                    <p-calendar appendTo="body" inputId="icon" dateFormat="dd-mm-yy" dataType="string"
+                                        (onSelect)="onSelectTargetDate($event)" [showIcon]="true"
+                                        [(ngModel)]="pitem.AARP_WORK_DATE" [style]="{'width':'100%', 'height':'10px'}"
+                                        [inputStyle]="{'width':'120px','height': '10px','margin-left':'0px'}">
+                                    </p-calendar>
+                                </div>
+                            </td>
+                            <td>
+                                <div
+                                    style="font-size: 15px;float:left;font-family: sans-serif;text-align: center;width:15px">
+                                    Date:
+                                </div>
+                                <!-- <input type="date" class="cl1" style="width:20px!important;float: right;" 
+                                     [(ngModel)]="pitem.AARP_TESTED_DATE"> -->
+                                <div class="p-field p-col-12 p-md-4" class="main-container">
+                                    <p-calendar appendTo="body" inputId="icon" date dataType="string"
+                                        dateFormat="dd-mm-yy" (onSelect)="onSelectTargetDate($event)" [showIcon]="true"
+                                        name="pitem.AARP_TESTED_DATE" [(ngModel)]="pitem.AARP_TESTED_DATE"
+                                        [style]="{'width':'100%', 'height':'10px'}"
+                                        [inputStyle]="{'width':'120px','height': '10px','margin-left':'0px'}">
+                                    </p-calendar>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="pitem.AARP_SUPPLIER">
+                            </td>
+                            <td>
+                                <input type="text" style="width:50px" class="form-control" name="AARP_L_COLOR"
+                                    [(ngModel)]="pitem.AARP_L_COLOR">
+                            </td>
+                            <td>
+                                <input type="text" style="width:50px" class="form-control" name="AARP_A_COLOR"
+                                    [(ngModel)]="pitem.AARP_A_COLOR">
+                            </td>
+                            <td>
+                                <input type="text" style="width:50px" class="form-control"
+                                    [(ngModel)]="pitem.AARP_B_COLOR" name="AARP_B_COLOR">
+                            </td>
+                            <td>
+                                <input type="text" value="95" class="form-control" name="AARP_GLOSS_GRAMS"
+                                    [(ngModel)]="pitem.AARP_GLOSS_GRAMS">
+                            </td>
+                            <td>
+                                <input type="text" value="XXXX" class="form-control" [(ngModel)]="pitem.AARP_DESIGNER"
+                                    name="AARP_DESIGNER">
+                            </td>
+                            <td>
+                                <input type="text" value="xxxx" class="form-control" [(ngModel)]="pitem.AARP_CREATEDBY"
+                                    name="AARP_CREATEDBY">
+                            </td>
+                            <td>
+                                <select class="form-control" name="project" [(ngModel)]="pitem.AARP_PROJECT"
+                                    name="AARP_PROJECT">
+                                    <option value="">--Select--</option>
+                                    <option value="solid">S220</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="file" class="file" style="display:none;" [(ngModel)]="pitem.AARP_IMAGENAME"
+                                    #fileInput accept="image.jpg,image.png" (change)="onFileChanged($event)">
+                                <i class="fa-sharp fa-solid fa-file-image" (click)="fileInput.click()"
+                                    style="color: red;font-size: 30px;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
-<div class="col-lg-12 mt-4" *ngIf="tName == 'Grain'">
-    <div style="background-color:rgb(197, 196, 196);">
-        <div class="py-2"><b>Grain</b></div>
-    </div>
-    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
-        <table class="table table-bordered">
-            <thead style="background-color:rgb(240, 240, 240)">
-                <tr>
-                    <th rowspan="3">S.No</th>
-                    <th rowspan="3">Grain Name</th>
-                    <th rowspan="3">Grain Code</th>
-                    <th rowspan="3">Supplier</th>
-                    <th rowspan="3">Etching Methodology</th>
-                    <th rowspan="3">Application Location</th>
-                    <th rowspan="3">Scratch & Dust Resistance Test</th>
-                    <th rowspan="3">Grain Master Location</th>
-                    <th rowspan="3">Grain Insert Available</th>
-                    <th colspan="2">Grain Dept</th>
-                    <th rowspan="3">Glose @20Deg</th>
-                    <th rowspan="3">Date of Master Relization</th>
-                    <th rowspan="3">Designer</th>
-                    <th rowspan="3">Created by</th>
-                    <th rowspan="3">Project</th>
-                    <th rowspan="3">Upload Plaque Image</th>
-                </tr>
-                <tr>
-                    <th>Dept</th>
-                    <th>Draft</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>Mark</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
 
-                </tr>
-            </tbody>
-        </table>
+<div class="container-fluid">
+    <div class="col-lg-12 mt-4" *ngIf="tName == 'PMIC'">
+        <div style="background-color:rgb(197, 196, 196);" class="rounded-top">
+            <div class="p-3"><b>Plastic MIC</b></div>
+        </div>
+        <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);" class="tblcontainer">
+            <div class="row tbl-fixed">
+                <table class="table table-bordered table-responsive table-condensed">
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="3"><i class="fa fa-plus" (click)="addpmicdetails()"
+                                    style="color: red;font-size: 20px;"></i></th>
+                            <th scope="col" rowspan="3">S.No</th>
+                            <th scope="col" rowspan="3">Color Name</th>
+                            <th scope="col" rowspan="3">Color Code</th>
+                            <th scope="col" rowspan="3">Material Grade</th>
+                            <th scope="col" rowspan="3">MIC Finish Type</th>
+                            <th scope="col" rowspan="3">Date of Master Realization</th>
+                            <th scope="col" rowspan="3">Applicable Part</th>
+                            <th scope="col" rowspan="3">Supplier</th>
+                            <th scope="col" colspan="3">Instrument Name BYK</th>
+                            <th scope="col" rowspan="3">Gloss @60Deg</th>
+                            <th scope="col" rowspan="3">Designer</th>
+                            <th scope="col" rowspan="3">Created By</th>
+                            <th scope="col" rowspan="3">Project</th>
+                            <th scope="col" rowspan="3">Upload Plaque Image</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="3">Color Values</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">L</th>
+                            <th scope="col">A</th>
+                            <th scope="col">B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of plasticMICdetailslist;let i=index">
+                            <td><i class="fa fa-trash" (click)="deleteplasticMICdetails(item)"></i></td>
+                            <td>{{i + 1}}</td>
+                            <td>
+                                <input type="text" class="form-control" name="colorname"
+                                    [(ngModel)]="item.AARPM_COLOR_NAME">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="colorcode"
+                                    [(ngModel)]="item.AARPM_COLOR_CODE">
+                            </td>
+                            <td>
+                                <select class="form-control" name="materialgrade"
+                                    [(ngModel)]="item.AARPM_MATERIAL_GRADE">
+                                    <option value="">--Select--</option>
+                                    <option value="PP">PP</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" name="micfinishtype" [(ngModel)]="item.AARPM_FINISH_TYPE">
+                                    <option value="">--Select--</option>
+                                    <option value="Solid">Solid</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </td>
+                            <td>
+                                Date:
+                                <!-- <span><input type="date" class="cl1" style="width:20px"  
+                                 [(ngModel)]="item.AARPM_MASTER_DATE"></span> -->
+                                <div class="p-field p-col-12 p-md-4" class="main-container">
+                                    <p-calendar appendTo="body" inputId="icon" dateFormat="dd-mm-yy" dataType="string"
+                                        (onSelect)="onSelectTargetDate($event)" [showIcon]="true"
+                                        [(ngModel)]="item.AARPM_MASTER_DATE" [style]="{'width':'100%', 'height':'10px'}"
+                                        [inputStyle]="{'width':'120px','height': '10px','margin-left':'0px'}"></p-calendar>
+                                </div>
+                            </td>
+                            <td>
+                                <select class="form-control" name="applicablepart"
+                                    [(ngModel)]="item.AARPM_APPLICABLE_PART">
+                                    <option value="">--Select--</option>
+                                    <option value="Solid">Exterior</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="supplier"
+                                    [(ngModel)]="item.AARPM_SUPPLIER">
+                            </td>
+                            <td>
+                                <input type="text" style="width:30px; padding: 8px;border-radius: 5px;border:none"
+                                    class="form-control" name="L" [(ngModel)]="item.AARPM_L_COLOR">
+                            </td>
+                            <td>
+                                <input type="text" style="width:30px; padding: 8px;border-radius: 5px;border:none"
+                                    class="form-control" [(ngModel)]="item.AARPM_A_COLOR">
+                            </td>
+                            <td>
+                                <input type="text" style="width:30px; padding: 8px;border-radius: 5px;border:none"
+                                    name="B" class="form-control" [(ngModel)]="item.AARPM_B_COLOR">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="gloss"
+                                    [(ngModel)]="item.AARPM_GLOSS_GRAMS">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="designer"
+                                    [(ngModel)]="item.AARPM_DESIGNER">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="createdby"
+                                    [(ngModel)]="item.AARPM_CREATEDBY">
+                            </td>
+                            <td>
+                                <select class="form-control" name="project" [(ngModel)]="item.AARPM_PROJECT">
+                                    <option value="">--Select--</option>
+                                    <option value="Solid">Solid</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </td>
+                            <td>
+                                <span>
+                                    <input type="file" class="file" style="display:none;" #fileInput
+                                        accept="image.jpg,image.png" (change)="onFileChanged($event)"
+                                        [(ngModel)]="item.AARP_IMAGENAME">
+                                    <i class="fa-sharp fa-solid fa-file-image" (click)="fileInput.click()"
+                                        style="color: red;font-size: 30px;"></i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
-<div class="col-lg-12 mt-4" *ngIf="tName == 'DFinish'">
-    <div style="background-color:rgb(197, 196, 196);">
-        <div class="py-2"><b>Decorative Finish</b></div>
-    </div>
-    <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);">
-        <table class="table table-bordered">
-            <thead style="background-color:rgb(240, 240, 240)">
-                <tr>
-                    <th rowspan="3">S.No</th>
-                    <th rowspan="3">Finish Name</th>
-                    <th rowspan="3">Finish Code</th>
-                    <th rowspan="3">Tier2 Supplier</th>
-                    <th rowspan="3">Tier1 Supplier</th>
-                    <th rowspan="3">Application Location</th>
-                    <th rowspan="3">Scratch & Dust Resistance Test</th>
-                    <th rowspan="3">Process Location</th>
-                    <th rowspan="3">Date Of Master Relization</th>
-                    <th rowspan="3">Glose @20Deg</th>
-                    <th rowspan="3">Designer</th>
-                    <th rowspan="3">Created by</th>
-                    <th rowspan="3">Project</th>
-                    <th rowspan="3">Upload Plaque Image</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>Mark</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
 
-                </tr>
-            </tbody>
-        </table>
+
+<div class="container-fluid">
+    <div class="col-lg-12 mt-4" *ngIf="tName == 'STrim'">
+        <div style="background-color:rgb(197, 196, 196);" class="rounded-top">
+            <div class="p-3"><b>Soft Trim</b></div>
+        </div>
+        <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);" class="tblcontainer">
+            <div class="row tbl-fixed">
+                <table class="table table-bordered table-responsive table-condensed">
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="3"><i class="fa fa-plus" (click)="add()"
+                                    style="color: red;font-size: 20px;"></i> </th>
+                            <th scope="col" rowspan="3">S.No</th>
+                            <th scope="col" rowspan="3">Color Name</th>
+                            <th scope="col" rowspan="3">Color Code</th>
+                            <th scope="col" rowspan="3">Material Specification</th>
+                            <th scope="col" rowspan="3">Material Construction</th>
+                            <th scope="col" rowspan="3">Surface Treatment</th>
+                            <th scope="col" rowspan="3">Lamination Thickness</th>
+                            <th scope="col" rowspan="3">Application Area</th>
+                            <th scope="col" rowspan="3">Stretch/ WeftWarp</th>
+                            <th scope="col" rowspan="3">Date Of master realization</th>
+                            <th scope="col" rowspan="3">Supplier</th>
+                            <th scope="col" rowspan="3">Designer</th>
+                            <th scope="col" rowspan="3">Cost of Material</th>
+                            <th scope="col" rowspan="3">Created By</th>
+                            <th scope="col" rowspan="3">Project</th>
+                            <th scope="col" rowspan="3">Upload Plaque Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of aarSoftTrimsDetailsList;let i=index">
+                            <td><i class="fa fa-trash" (click)="DeleteSofttrimdetails(item)"></i></td>
+                            <td>{{i+1}}</td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_COLOR_NAME">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_COLOR_CODE">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_MAT_SPECI">
+                            </td>
+                            <td>
+                                <select class="form-control" name="materialconstruction"
+                                    [(ngModel)]="item.AARST_MAT_CON">
+                                    <option value="">--Select--</option>
+                                    <option value="warpknit">warpknit</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" name="surfacetreatment" [(ngModel)]="item.AARST_TREAT">
+                                    <option value="">--Select--</option>
+                                    <option value="Emboss">Emboss</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_LAMI_THICK">
+                            </td>
+                            <td>
+                                <select class="form-control" name="applicationarea" id=""
+                                    [(ngModel)]="item.AARST_APP_AREA">
+                                    <option value="">--Select--</option>
+                                    <option value="seatInsert">seatInsert</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_STRETCH_WRAP">
+                            </td>
+                            <td>
+                                Date:
+                                <!-- <span>
+                                <input type="date" [(ngModel)]="item.AARST_MAT_DATE" class="cl1" style="width:20px">
+                            </span> -->
+                                <div class="p-field p-col-12 p-md-4" class="main-container">
+                                    <p-calendar appendTo="body" inputId="icon" dateFormat="dd-mm-yy" dataType="string"
+                                        (onSelect)="onSelectTargetDate($event)" [showIcon]="true"
+                                        [(ngModel)]="item.AARST_MAT_DATE" [style]="{'width':'100%', 'height':'10px'}"
+                                        [inputStyle]="{'width':'120px','height': '10px','margin-left':'0px'}"></p-calendar>
+                                </div>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_SUPPLIER">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_DESIGNER">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_COST">
+
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="item.AARST_CREATED_BY">
+                            </td>
+                            <td>
+                                <select class="form-control" name="" id="" [(ngModel)]="item.AARST_PROJECT">
+                                    <option value="">--Select--</option>
+                                    <option selected value="S220">S220</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="file" class="file" style="display:none;" #fileInput
+                                    accept="image.jpg,image.png" [(ngModel)]="item.AARST_UPLOAD_IMAGE"
+                                    (change)="onFileChanged($event)">
+                                <i class="fa-sharp fa-solid fa-file-image" (click)="fileInput.click()"
+                                    style="color: red;font-size: 30px;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="col-lg-12 mt-4" *ngIf="tName == 'Grain'">
+        <div style="background-color:rgb(197, 196, 196);" class="rounded-top">
+            <div class="p-3"><b>Grain</b></div>
+        </div>
+        <div class="col-lg-12 mt-4" style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);" class="tblcontainer">
+            <div class="row tbl-fixed">
+                <table class="table table-bordered table-responsive table-condensed">
+                    <thead style="background-color:rgb(240, 240, 240)" class="p-2">
+                        <tr>
+                            <th scope="col" rowspan="3">
+                                <i class="fa fa-plus" (click)="AddGraindetails()"
+                                    style="color: red;font-size: 20px;"></i>
+                            </th>
+                            <th scope="col" rowspan="3">S.No</th>
+                            <th scope="col" rowspan="3">Grain Code</th>
+                            <th scope="col" rowspan="3">Grain Type</th>
+                            <th scope="col" rowspan="3">Supplier</th>
+                            <th scope="col" rowspan="3">Etching Methodology</th>
+                            <th scope="col" rowspan="3">Application Location</th>
+                            <th scope="col" rowspan="3">Scratch & Dust Resistance Test</th>
+                            <th scope="col" rowspan="3">Grain Master Location</th>
+                            <th scope="col" rowspan="3">Grain Insert Available</th>
+                            <th scope="col" colspan="2">Grain Dept</th>
+                            <th scope="col" rowspan="3">Gloss @60Deg</th>
+                            <th scope="col" rowspan="3">Date of master realization</th>
+                            <th scope="col" rowspan="3">Designer</th>
+                            <th scope="col" rowspan="3">Created By</th>
+                            <th scope="col" rowspan="3">Project</th>
+                            <th scope="col" rowspan="3">Upload Plaque Image</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Depth</th>
+                            <th scope="col">Draft</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let gitem of GraindetailList; let i=index">
+                            <td><i class="fa fa-trash" (click)="DeleteGrainListItems(gitem)"></i></td>
+                            <td>{{i+1}}</td>
+                            <td>
+                                <div>
+                                    <input type="text" class="form-control" [(ngModel)]="gitem.AARG_COLOR_CODE">
+                                </div>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="gitem.AARG_GRAIN_TYPES">
+                                    <option value="">--Select--</option>
+                                    <option selected value="Stipple">Stipple</option>
+                                    <option>Stipple</option>
+                                    <option>Stipple</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="gitem.AARG_SUPPLIER">
+                                    <option value="">--Select--</option>
+                                    <option selected value="Standex">Standex</option>
+                                    <option value="Standex">Standex</option>
+                                    <option value="Standex">Standex</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="gitem.AARG_METHODOLOGY">
+                                    <option value="">--Select--</option>
+                                    <option selected value="Laser Etch">Laser Etch</option>
+                                    <option value="Laser Etch">Laser Etch</option>
+                                    <option value="Laser Etch">Laser Etch</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="gitem.AARG_APPLI_LOC">
+                                    <option value="">--Select--</option>
+                                    <option selected value="Exterior">Exterior</option>
+                                    <option value="Exterior">Exterior</option>
+                                    <option value="Exterior">Exterior</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="gitem.AARG_SCRATCH_TEST">
+                                    <option value="">--Select--</option>
+                                    <option selected value="Completed">Completed</option>
+                                    <option value="Completed">Completed</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="gitem.AARG_GRAIN_LOC">
+                                    <option selected value="Korea">Korea</option>
+                                    <option value="Korea">Korea</option>
+                                    <option Korea>Korea</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="gitem.AARG_GRAIN_INSERT">
+                                    <option value="">--Select--</option>
+                                    <option selected value="HEP">HEP</option>
+                                    <option value="HEP">HEP</option>
+                                    <option value="HEP">HEP</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="gitem.AARG_GRAIN_DEPATH">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="gitem.AARG_GRAIN_DRAFT">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="gitem.AARG_GLOSS_GRAMS">
+                            </td>
+                            <td>
+                                Date:
+                                <!-- <span>
+                                    <input type="date" class="cl1" style="width:20px" [(ngModel)]="gitem.AARG_MASTER_DATE">
+                                </span> -->
+                                <div class="p-field p-col-12 p-md-4" class="main-container">
+                                    <p-calendar appendTo="body" inputId="icon" dateFormat="dd-mm-yy" dataType="string"
+                                        (onSelect)="onSelectTargetDate($event)" [showIcon]="true"
+                                        [(ngModel)]="gitem.AARG_MASTER_DATE" [style]="{'width':'100%', 'height':'10px'}"
+                                        [inputStyle]="{'width':'120px','height': '10px','margin-left':'0px'}"></p-calendar>
+                                </div>
+
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="gitem.AARG_DESIGNER">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" [(ngModel)]="gitem.AARG_CREATEDBY">
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="gitem.AARG_PROJECT">
+                                    <option value="">--Select--</option>
+                                    <option selected value="S220">S220</option>
+                                    <option>S220</option>
+                                    <option>S220</option>
+                                </select>
+                            </td>
+                            <td>
+                                <span>
+                                    <input type="file" class="file" style="display:none;" #fileInput
+                                        accept="image.jpg,image.png" (change)="onFileChanged($event)">
+                                    <i class="fa-sharp fa-solid fa-file-image" (click)="fileInput.click()"
+                                        style="color: red;font-size: 30px;"></i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="col-lg-12 mt-4" *ngIf="tName == 'DFinish'">
+        <div style="background-color:rgb(197, 196, 196);" class="rounded-top">
+            <div class="p-3"><b>Decorative Finish</b></div>
+        </div>
+        <div style="overflow-x:auto;border: 1px solid rgb(197, 196, 196);" class="tblcontainer">
+            <div class="row tbl-fixed">
+                <table class="table table-bordered table-responsive">
+                    <thead style="background-color:rgb(240, 240, 240)">
+                        <tr>
+                            <th scope="col"><i class="fa fa-plus" (click)="addList()"
+                                    style="color: red;font-size: 20px;"></i></th>
+                            <th scope="col" rowspan="3">S.No</th>
+                            <th scope="col" rowspan="3">Finish Code</th>
+                            <th scope="col" rowspan="3">Finish Type</th>
+                            <th scope="col" rowspan="3">Tier2 Supplier</th>
+                            <th scope="col" rowspan="3">Tier1 Supplier</th>
+                            <th scope="col" rowspan="3">Application Location</th>
+                            <th scope="col" rowspan="3">Scratch & Dust Resistance Test</th>
+                            <th scope="col" rowspan="3">Process Location</th>
+                            <th scope="col" rowspan="3">Date Of master realization</th>
+                            <th scope="col" rowspan="3">Gloss @60Deg</th>
+                            <th scope="col" rowspan="3">Designer</th>
+                            <th scope="col" rowspan="3">Created By</th>
+                            <th scope="col" rowspan="3">Project</th>
+                            <th scope="col" rowspan="3">Upload Plaque Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ditem of dfinishList;let i=index">
+                            <td><i class="fa fa-trash" (click)="DeleteFinishListItems(ditem)"></i></td>
+                            <td>{{i+1}}</td>
+                            <td>
+                                <div>
+                                    <input type="text" class="form-control" [(ngModel)]="ditem.AARDF_FINISH_CODE">
+                                </div>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="ditem.AARDF_FINISH_TYPE">
+                                    <option value="">--Select--</option>
+                                    <option selected>IMD</option>
+                                    <option>IMD</option>
+                                    <option>IMD</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" [(ngModel)]="ditem.AADRF_TIER2_SUPP">
+                                    <option value="">--Select--</option>
+                                    <option selected>Walter pack</option>
+                                    <option>Walter pack</option>
+                                    <option>Walter pack</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="ditem.AARDF_TIER1_SUPP">
+                                    <option value="">--Select--</option>
+                                    <option selected>Mate</option>
+                                    <option>Mate</option>
+                                    <option>Mate</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" [(ngModel)]="ditem.AARDF_APP_LOC">
+                                    <option value="">--Select--</option>
+                                    <option selected>Exterior</option>
+                                    <option>Exterior</option>
+                                    <option>Exterior</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" [(ngModel)]="ditem.AARDF_SCRATCH">
+                                    <option value="">--Select--</option>
+                                    <option selected>Completed</option>
+                                    <option>Completed</option>
+                                    <option>Completed</option>
+                                </select></td>
+                            <td><select class="form-control" [(ngModel)]="ditem.AARDF_PROCESS_LOC">
+                                    <option value="">--Select--</option>
+                                    <option selected>Korea</option>
+                                    <option>Korea</option>
+                                    <option>Korea</option>
+                                </select></td>
+                            <td>
+                                Date:
+                                <!-- <span><input type="date" class="cl1" style="width:30px" 
+                                 [(ngModel)]="ditem.AARDF_DATE" ></span> -->
+                                <div class="p-field p-col-12 p-md-4" class="main-container">
+                                    <p-calendar appendTo="body" inputId="icon" dateFormat="yy-mm-dd"
+                                        (onSelect)="onSelectTargetDate($event)" [showIcon]="true"
+                                        [(ngModel)]="ditem.AARDF_DATE" [style]="{'width':'100%', 'height':'10px'}"
+                                        [inputStyle]="{'width':'120px','height': '10px','margin-left':'0px'}"></p-calendar>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" [(ngModel)]="ditem.AARDF_GLOSS" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" [(ngModel)]="ditem.AARDF_DESIGNER" class="form-control">
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" [(ngModel)]="ditem.AARDF_CREATED_BY" class="form-control">
+                                </div>
+                            </td>
+                            <td><select [(ngModel)]="ditem.AARDF_PROJECT" class="form-control">
+                                    <option value="">--Select--</option>
+                                    <option selected>S220</option>
+                                    <option>S220</option>
+                                    <option>S220</option>
+                                </select>
+                            </td>
+                            <td>
+                                <span>
+                                    <input type="file" class="file" style="display:none;" #fileInput
+                                        accept="image.jpg,image.png" (change)="onFileChanged($event)"
+                                        [(ngModel)]="ditem.AARDF_UPLOAD_IMAGE">
+                                    <i class="fa-sharp fa-solid fa-file-image" (click)="fileInput.click()"
+                                        style="color: red;font-size: 30px;"></i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

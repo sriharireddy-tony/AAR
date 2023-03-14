@@ -8,3 +8,12 @@ select {
     outline: 0px;
     box-shadow: none;
 }
+.borderRed{
+    border:solid 2px red;
+}
+.req{
+    color:red;
+}
+.nav{
+    float:inline-end
+}

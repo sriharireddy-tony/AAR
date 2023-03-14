@@ -1,262 +1,293 @@
-<div class="container-fluid">
-    <div class="col-lg-12">
-        <div class="row">
-            <h5 class="float-start" style="color:red">Color Coding</h5>
-        </div>
-    </div>
-<div class="mt-4 col-lg-12">
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="row borderRadius">
-                <div class="col-lg-6">
-                    <span>Major Color</span>
-                </div>
-                <div class="col-lg-6 veticalLine">
-                    <select class="form-select">
-                        <option value="">--Select--</option>
-                        <option>gdffghh</option>
-                    </select>
+<form [formGroup]="ColorCodeForm">
+    <div class="container-fluid">
+        <div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <h5 class="float-start" style="color:red">Color Coding</h5>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="row borderRadius">
-                <div class="col-lg-6">
-                    <span>Application Location</span>
-                </div>
-                <div class="col-lg-6 veticalLine">
-                    <select class="form-select">
-                        <option value="">--Select--</option>
-                        <option>gdffghh</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="row borderRadius">
-                <div class="col-lg-6">
-                    <span>Paint Type</span>
-                </div>
-                <div class="col-lg-6 veticalLine">
-                    <select class="form-select selectpicker">
-                        <option value="">--Select--</option>
-                        <option>gdffghh</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="mt-4 col-lg-12">
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="row borderRadius">
-                <div class="col-lg-6">
-                    <span>Finish Type</span>
-                </div>
-                <div class="col-lg-6 veticalLine">
-                    <select class="form-select">
-                        <option value="">--Select--</option>
-                        <option>gdffghh</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="row borderRadius">
-                <div class="col-lg-6">
-                    <span>Decorative Application</span>
-                </div>
-                <div class="col-lg-6 veticalLine">
-                    <select class="form-select">
-                        <option value="">--Select--</option>
-                        <option>gdffghh</option>
-                    </select>
+            <div class="mt-4 col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="row borderRadius"
+                            [ngClass]="{'borderRed':isSubmitted && ColorCodeForm.get('majorcolor')?.invalid}">
+                            <div class="col-lg-6">
+                                <span>Major Color <span class="sup">*</span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine">
+                                <select class="form-select" formControlName="majorcolor">
+                                    <option value="">--Select--</option>
+                                    <option *ngFor="let majorcolor of MAJOR_COLORLists">{{majorcolor.LMF_DESC}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row borderRadius"
+                            [ngClass]="{'borderRed':isSubmitted && ColorCodeForm.get('applicationlocation')?.invalid}">
+                            <div class="col-lg-6">
+                                <span>Application Location<span class="sup">*</span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine">
+                                <select class="form-select" formControlName="applicationlocation">
+                                    <option value="">--Select--</option>
+                                    <option *ngFor="let applicationLocation of APPLICATION_LOCATIONLists">
+                                        {{applicationLocation.LMF_DESC}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row borderRadius"
+                            [ngClass]="{'borderRed':isSubmitted && ColorCodeForm.get('painttype')?.invalid}">
+                            <div class="col-lg-6">
+                                <span>Paint Type<span class="sup">*</span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine">
+                                <select class="form-select selectpicker" formControlName="painttype">
+                                    <option value="">--Select--</option>
+                                    <option *ngFor="let painttype of PAINT_TYPELists">{{painttype.LMF_DESC}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="row borderRadius">
-                <div class="col-lg-6">
-                    <span>Number</span>
+            <div class="mt-4 col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="row borderRadius"
+                            [ngClass]="{'borderRed':isSubmitted && ColorCodeForm.get('finishtype')?.invalid}">
+                            <div class="col-lg-6">
+                                <span>Finish Type<span class="sup">*</span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine">
+                                <select class="form-select" formControlName="finishtype">
+                                    <option value="">--Select--</option>
+                                    <option *ngFor="let finishtype of FINISH_TYPELists">{{finishtype.LMF_DESC}}</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row borderRadius"
+                            [ngClass]="{'borderRed':isSubmitted && ColorCodeForm.get('decorativeapplication')?.invalid}">
+                            <div class="col-lg-6">
+                                <span>Decorative Application <span class="sup">*</span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine">
+                                <select class="form-select" formControlName="decorativeapplication">
+                                    <option value="">--Select--</option>
+                                    <option *ngFor="let decorativeApplication of DECORATIVE_APPLICATIONLists">
+                                        {{decorativeApplication.LMF_DESC}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row borderRadius"
+                            [ngClass]="{'borderRed':isSubmitted && ColorCodeForm.get('colorcodingnumber')?.invalid}">
+                            <div class="col-lg-6">
+                                <span>Number<span class="sup">*</span></span>
+                            </div>
+                            <div class="col-lg-6 veticalLine">
+                                <input type="text" class="form-control inputBorderHide"
+                                    formControlName="colorcodingnumber" (keypress)="keyPressNumbers($event)">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 veticalLine">
-                    <input type="text" class="form-control inputBorderHide">
+            </div>
+            <div class="col-lg-12 mt-3" style="text-align:center">
+                <button class="btn blackBtn mx-3" (click)="SaveColorCodingData()"><i
+                        class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;Save</button>
+                <button class="btn btn-outline-dark" (click)="clearColorCoding()"><i
+                        class="fa-regular fa-circle-xmark"></i>&nbsp;&nbsp;&nbsp;Clear</button>
+            </div>
+        </div>
+        <div class="col-lg-12 mt-4">
+            <div style="background-color:rgb(197, 196, 196);">
+                <div class=""><b>Color Master</b></div>
+            </div>
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr style="background-color:rgb(240, 240, 240)">
+                            <td>S.No</td>
+                            <th>Major Color</th>
+                            <th>Application Location</th>
+                            <th>Paint Type</th>
+                            <th>Finish Type</th>
+                            <th>Decorative Application</th>
+                            <th>Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of colorcodeDataList  | paginate: { id:'paginationcolor',itemsPerPage: 10, currentPage: page, totalItems: totalLength }; let i1=index">
+                            <td>{{i1+1}}</td>
+                            <td>{{data.AARP_COLOR_NAME}}</td>
+                            <td>{{data.AARP_APPLICABLELOCATION}}</td>
+                            <td>{{data.AARP_PAINT_TYPE}}</td>
+                            <td>{{data.AARP_FINISH_TYPE}}</td>
+                            <td>{{data.AARP_DECOR_APPLICATION}}</td>
+                            <td>{{data.AARP_NUMBER}}</td>
+                        </tr>
+                        <tr >
+                            <td colspan="7">
+                                <pagination-controls id="paginationcolor" style="height:25px;float: right;"  (pageChange)="handlePageChangeforcolorcode($event)"></pagination-controls>
+                                <p style="height:10px;float: right;">Number of Records: {{colorcodeDataList.length}}</p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-12 mt-4">
+            <div class="row">
+                <h5 class="float-start" style="color:red">Grain Coding</h5>
+            </div>
+        </div>
+        <div class="mt-4 col-lg-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="row borderRadius"
+                        [ngClass]="{'borderRed':Submitted && ColorCodeForm.get('majorgraintype')?.invalid}">
+                        <div class="col-lg-6">
+                            <span>Major Grain Types <span class="sup">*</span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine">
+                            <select class="form-select" formControlName="majorgraintype">
+                                <option value="">--Select--</option>
+                                <option *ngFor="let majorGrainTypes of MAJOR_GRAIN_TYPESLists">
+                                    {{majorGrainTypes.LMF_DESC}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row borderRadius"
+                        [ngClass]="{'borderRed':Submitted && ColorCodeForm.get('image')?.invalid}">
+                        <div class="col-lg-6">
+                            <span>image <span class="sup">*</span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine">
+                            <select class="form-select selectpicker" formControlName="image">
+                                <option value="">--Select--</option>
+                                <option *ngFor="let image of IMAGELists">{{image.LMF_DESC}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4">
+                    <div class="row borderRadius">
+                        <div class="col-lg-6">
+                            <span>Image <span class="sup">*</span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine">
+                            <button class="btn"
+                                style="background-color:rgb(182, 182, 182);color: white;height:19px;width:150px;"
+                                (click)="uploadImage()"></button>
+                            <form style="display:none">
+                                <!-- <input type="file" id="fileUploadDoc" (change)="UploadFileDoc($event)"
+                           [(ngModel)]="fileUploadDoc" name="fileUploadDoc" style="display:none"
+                          [ngModelOptions]="{standalone: true}" value="fileUploadDoc"> -->
+                                <!-- <input type="file" id="imageUpload">
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-lg-4">
+                    <div class="row borderRadius"
+                        [ngClass]="{'borderRed':Submitted && ColorCodeForm.get('methodology')?.invalid}">
+                        <div class="col-lg-6">
+                            <span>Methodology <span class="sup">*</span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine">
+                            <select class="form-select selectpicker" formControlName="methodology">
+                                <option value="">--Select--</option>
+                                <option *ngFor="let methodology of METHODOLOGYLists">{{methodology.LMF_DESC}}</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="col-lg-12 mt-3" style="text-align:center">
-    <button class="btn blackBtn mx-3"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;Save</button>
-    <button class="btn btn-outline-dark"><i class="fa-regular fa-circle-xmark"></i>&nbsp;&nbsp;&nbsp;Clear</button>
-</div>
-<div class="col-lg-12 mt-4">
-    <div style="background-color:rgb(197, 196, 196);">
-        <div class=""><b>Color Master</b></div>
-    </div>
-    <div>
-        <table class="table table-bordered">
-            <thead>
-                <tr style="background-color:rgb(240, 240, 240)">
-                    <th>Major Color</th>
-                    <th>Application Location</th>
-                    <th>Paint Type</th>
-                    <th>Finish Type</th>
-                    <th>Decorative Application</th>
-                    <th>Number</th>
-                  </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                  </tr>
-                  <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                  </tr>
-                  <tr>
-                    <td>Adam</td>
-                    <td>Johnson</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                  </tr>
-            </tbody>
-        </table>
-      </div>
-</div>
-<div class="col-lg-12 mt-4">
-    <div class="row">
-        <h5 class="float-start" style="color:red">Grain Coding</h5>
-    </div>
-</div>
-<div class="mt-4 col-lg-12">
-<div class="row">
-    <div class="col-lg-4">
-        <div class="row borderRadius">
-            <div class="col-lg-6">
-                <span>Major Grain Types</span>
-            </div>
-            <div class="col-lg-6 veticalLine">
-                <select class="form-select">
-                    <option value="">--Select--</option>
-                    <option>gdffghh</option>
-                </select>
+        <div class="mt-4 col-lg-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="row borderRadius"
+                        [ngClass]="{'borderRed':Submitted && ColorCodeForm.get('methodology')?.invalid}">
+                        <div class="col-lg-6">
+                            <span>Supplier <span class="sup">*</span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine">
+                            <select class="form-select" formControlName="supplier">
+                                <option value="">--Select--</option>
+                                <option *ngFor="let supplier of SUPPLIERLists">{{supplier.LMF_DESC}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row borderRadius"
+                        [ngClass]="{'borderRed':Submitted && ColorCodeForm.get('graincodenumber')?.invalid}">
+                        <div class="col-lg-6">
+                            <span>Number <span class="sup">*</span></span>
+                        </div>
+                        <div class="col-lg-6 veticalLine">
+                            <input type="text" class="form-control inputBorderHide"  (keypress)="keyPressNumbers($event)" formControlName="graincodenumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <button class="btn blackBtn" (click)="SaveGrainCodingData()"><i
+                            class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;Save</button>
+                    <button class="btn btn-outline-dark mx-3" (click)="clearGraincoding()"><i
+                            class="fa-regular fa-circle-xmark"></i>&nbsp;&nbsp;&nbsp;Clear</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="row borderRadius">
-            <div class="col-lg-6">
-                <span>Image</span>
+        <div class="col-lg-12 mt-4">
+            <div style="background-color:rgb(197, 196, 196);">
+                <div class=""><b>Color Master</b></div>
             </div>
-            <div class="col-lg-6 veticalLine">
-                <button class="btn" style="background-color:rgb(182, 182, 182);color: white;height:19px;width:150px;" (click)="uploadImage()"></button>
-                <form style="display:none">
-                    <!-- <input type="file" id="fileUploadDoc" (change)="UploadFileDoc($event)"
-                        [(ngModel)]="fileUploadDoc" name="fileUploadDoc" style="display:none"
-                        [ngModelOptions]="{standalone: true}" value="fileUploadDoc"> -->
-                        <input type="file" id="imageUpload">
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="row borderRadius">
-            <div class="col-lg-6">
-                <span>Methodology</span>
-            </div>
-            <div class="col-lg-6 veticalLine">
-                <select class="form-select selectpicker">
-                    <option value="">--Select--</option>
-                    <option>gdffghh</option>
-                </select>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="mt-4 col-lg-12">
-<div class="row">
-    <div class="col-lg-4">
-        <div class="row borderRadius">
-            <div class="col-lg-6">
-                <span>Supplier</span>
-            </div>
-            <div class="col-lg-6 veticalLine">
-                <select class="form-select">
-                    <option value="">--Select--</option>
-                    <option>gdffghh</option>
-                </select>
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr style="background-color:rgb(240, 240, 240)">
+                            <td>S.No</td>
+                           <th>Major Grain Types / Organic Leather</th>
+                                    <th>Methodology</th>
+                                    <th>Supplier</th>
+                                    <th>Number</th>
+                                    <th>Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of GraincodeDataList  | paginate: {  id:'paginationgrain', itemsPerPage: 10, currentPage: graincodepage, totalItems: totalLengthGraincode }; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{data.AARG_GRAIN_TYPES}}</td>
+                                    <td>{{data.AARG_METHODOLOGY}}</td>
+                                    <td>{{data.AARG_SUPPLIER}}</td>
+                                    <td>{{data.AARG_NUMBER}}</td>
+                                    <td>{{data.AARG_COLOR_CODE}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <pagination-controls id="paginationgrain" style="height:25px;float: right;"  
+                                 (pageChange)="handlePageChangeforGraincode($event)"></pagination-controls>
+                                <p style="height:10px;float: right;">Number of Records: {{GraincodeDataList.length}}</p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
             </div>
         </div>
+           
+        
     </div>
-    <div class="col-lg-4">
-        <div class="row borderRadius">
-            <div class="col-lg-6">
-                <span>Number</span>
-            </div>
-            <div class="col-lg-6 veticalLine">
-                <input type="text" class="form-control inputBorderHide">
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <button class="btn blackBtn"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;&nbsp;Save</button>
-         <button class="btn btn-outline-dark mx-3"><i class="fa-regular fa-circle-xmark"></i>&nbsp;&nbsp;&nbsp;Clear</button>
-    </div>
-</div>
-</div>
-<div class="col-lg-12 mt-4">
-    <div style="background-color:rgb(197, 196, 196);">
-        <div class=""><b>Grade Master</b></div>
-    </div>
-    <div>
-        <table class="table table-bordered">
-            <thead>
-                <tr style="background-color:rgb(240, 240, 240)">
-                    <th>Major Grain Types / Organic Leather</th>
-                    <th>Methodology</th>
-                    <th>Supplier</th>
-                    <th>Number</th>
-                    <th>Code</th>
-                  </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                  </tr>
-                  <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                  </tr>
-                  <tr>
-                    <td>Adam</td>
-                    <td>Johnson</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                  </tr>
-            </tbody>
-        </table>
-      </div>
-</div>
-</div>
+</form>
+

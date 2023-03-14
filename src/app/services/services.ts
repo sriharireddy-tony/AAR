@@ -13,6 +13,10 @@ declare var $: any;
   providedIn: 'root'
 })
 export class Services {
+  [x: string]: any;
+  static cordysAjaxCall(arg0: string, aarNamespace: any, params: {}) {
+    throw new Error('Method not implemented.');
+  }
   actStage!: string;
 
   constructor(private ngxService: NgxUiLoaderService, private router: Router) {
@@ -95,7 +99,7 @@ export class Services {
         _this.fireSoapService(methodname, namespace, upload_req, isAsync, showLoadingIndicator)
           .then((response: any) => {
 
-            resolve(response["uploadDocInServer"]);
+            resolve(response["UploadDocument"]);
           }).catch((response) => {
             alert(response.responseJSON.faultstring.text);
             reject(response);

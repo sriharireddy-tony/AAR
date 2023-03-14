@@ -3,3 +3,22 @@ select {
     outline: 0px;
     box-shadow: none;
 }
+span{
+    font-size: 12px !important;
+}
+/* #aspect{
+    margin-right: 800px;
+} */
+.icon{
+  background-image: url('../part-creation/search.png');
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: right;
+  
+}
+input[type="text"]{
+    /* width: 100%; */
+    /* height: 100%; */
+    border: none;
+}
+

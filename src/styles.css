@@ -20,3 +20,29 @@
     border-left: 2px solid grey;
     height: 36px;
 }
+.p-slider .p-slider-range {
+    background-image: linear-gradient(to right, #fd0202,#66ff00) !important;
+}
+.ngx-pagination .current {
+    background: black !important;
+    color: red !important;
+}
+.buttonCss {
+    position: absolute;
+    top: 44%;
+    left: 45%;
+}
+  .p-slider-horizontal .p-slider-range {
+    border-radius: 10px !important
+  }
+  .p-slider .p-slider-handle {
+    height: 1.3rem !important;
+    width: 1.7rem !important;
+    background: #4338ca !important;
+    color: white !important;
+    border: 2px solid #4338ca !important;
+  }
+  .p-slider.p-slider-horizontal {
+    height: 8px !important;
+    background-image: linear-gradient(to right, #fd0202, #ecdf1e , #66ff00) !important;
+}
